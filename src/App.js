@@ -1,5 +1,5 @@
 // import "./CSS/style.css";
-import React from "react";
+// import React from "react";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 //routes
 import Login from "./comps/Login";
@@ -8,6 +8,7 @@ import Detail from "./comps/Detail";
 import Favorites from "./comps/Favorites";
 //comps
 import Form from "./comps/Form";
+// import List from "./comps/List";
 //redux
 import { useSelector } from "react-redux";
 //

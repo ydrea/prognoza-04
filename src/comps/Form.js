@@ -4,7 +4,7 @@ import { addCity } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();

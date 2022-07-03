@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const apiSlice = createSlice({
-  name: "cities",
+  name: "api",
   initialState: [
     { id: 1, city: "city1", fav: false },
     { id: 2, city: "city2", fav: false },
@@ -18,9 +18,11 @@ const apiSlice = createSlice({
       };
       state.push(noviGrad);
     },
+
+    resetList: (state) => (state = {}),
   },
 });
 
-export const { addCity } = apiSlice.actions;
+export const { addCity, resetList } = apiSlice.actions;
 
 export default apiSlice.reducer;
