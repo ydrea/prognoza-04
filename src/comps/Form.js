@@ -1,11 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addCity } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
+  const dispatch = useDispatch;
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("user entered: " + value);
+    dispatch(
+      addCity({
+        id: Date.now(),
+        city: value,
+        fav: true,
+      })
+    );
   };
 
   return (

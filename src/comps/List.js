@@ -1,12 +1,14 @@
 import React from "react";
 import Detail from "./Detail";
+import { useSelector } from "react-redux";
 
 function List() {
-  const cities = [
-    { id: 1, city: "cit1", fav: false },
-    { id: 2, city: "cit2", fav: false },
-    { id: 3, city: "cit3", fav: false },
-  ];
+  const cities = useSelector((state) => state.cities);
+  // [
+  //   { id: 1, city: "cit1", fav: false },
+  //   { id: 2, city: "cit2", fav: false },
+  //   { id: 3, city: "cit3", fav: false },
+  // ];
   return (
     <>
       <div>List</div>
