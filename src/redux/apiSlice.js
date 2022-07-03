@@ -18,11 +18,19 @@ const apiSlice = createSlice({
       };
       state.push(noviGrad);
     },
+    toggleFav: (state, action) => {
+      const idX = state.findIndex((i) => i.id === action.payload.id);
+      console.log(idX);
+      state[idX].fav = action.payload.fav;
+    },
+    deleteIt: (state, action) => {
+      return state.filter((ii) => ii.id !== action.payload.id);
+    },
 
     resetList: (state) => (state = {}),
   },
 });
 
-export const { addCity, resetList } = apiSlice.actions;
+export const { addCity, resetList, toggleFav, deleteIt } = apiSlice.actions;
 
 export default apiSlice.reducer;
