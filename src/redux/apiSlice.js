@@ -6,7 +6,7 @@ const apiSlice = createSlice({
     { id: 1, city: "city1", fav: false },
     { id: 2, city: "city2", fav: false },
     { id: 3, city: "city3", fav: false },
-    { id: 4, city: "medo4", fav: true },
+    { id: 4, city: "medo", fav: true },
   ],
   reducers: {
     addCity: (state, action) => {
