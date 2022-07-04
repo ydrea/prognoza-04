@@ -27,10 +27,12 @@ const apiSlice = createSlice({
       return state.filter((ii) => ii.id !== action.payload.id);
     },
 
-    // resetList: (state) => (state = {}),
+    resetList: (state) => {
+      return (state = []);
+    },
   },
 });
 
-export const { addCity, toggleFav, deleteIt } = apiSlice.actions;
+export const { addCity, toggleFav, deleteIt, resetList } = apiSlice.actions;
 
 export default apiSlice.reducer;
