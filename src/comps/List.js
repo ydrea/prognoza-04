@@ -13,14 +13,19 @@ export default function List() {
     dispatch(resetList());
   };
 
+  const tenPieces = cities.slice(0, 5).map((i) => {
+    return <Detail id={i.id} city={i.city} fav={i.fav} />;
+  });
+
   return (
     <div>
       <div>List</div>
       <button onClick={handleResetList}>Reset</button>
       <ul>
-        {cities.map((i) => (
+        {tenPieces}
+        {/* {cities.map((i) => (
           <Detail id={i.id} city={i.city} fav={i.fav} />
-        ))}
+        ))} */}
       </ul>
     </div>
   );
