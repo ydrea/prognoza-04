@@ -11,7 +11,7 @@ const apiSlice = createSlice({
   reducers: {
     addCity: (state, action) => {
       const noviGrad = {
-        city: action.payload.city,
+        grad: action.payload,
         id: Date.now(),
         // id: action.payload.city.id,
         fav: false,
