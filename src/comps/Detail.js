@@ -27,5 +27,3 @@ export default function Detail({ id, grad, fav }) {
     </li>
   );
 }
-
-export default Detail;
