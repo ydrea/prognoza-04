@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCity, getCitiesAsync } from "../redux/apiSlice";
+import { addCity, getCitiesAsync, getEmAsync } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
-  const api = useSelector((state) => state.api);
-  console.log("API", api);
+  const city = useSelector((state) => state.api.city);
+  console.log("API", city);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCity({ city: value }));
+    console.log("city");
+    // dispatch(addCity());
 
-    dispatch(getCitiesAsync(value));
+    // dispatch(getCitiesAsync(value));
   };
 
   // useEffect(() => {
-
+  //   dispatch(addCity(city));
   // }, [dispatch]);
 
   return (

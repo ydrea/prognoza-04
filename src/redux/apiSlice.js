@@ -1,27 +1,38 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getCitiesAsync = createAsyncThunk("call", async (city) => {
-  const resp = await fetch(
+// export const getCitiesAsync = createAsyncThunk("call", async (city) => {
+//   const resp = await fetch();
+// `https://api.openweathermap.org/data/2.5/forecast?appid=53af3d2fdf27c517f767ade373c0734c&q=${city}`;
+//   if (resp.ok) {
+//     const data = await resp.json();
+//     console.log("ANXIOS", data);
+//     return { data };
+//   }
+// });
+// // console.log("anxios", data);
+
+export const getEmAsync = createAsyncThunk("todos", async () => {
+  const res = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?appid=53af3d2fdf27c517f767ade373c0734c&q=${city}`
   );
-  if (resp.ok) {
-    const data = await resp.json();
-    console.log("ANXIOS", data);
-    return { data };
+  if (res.ok) {
+    const podata = await res.json();
+    console.log(podata);
+    return { podata };
   }
 });
-// console.log("anxios", data);
 
 export const apiSlice = createSlice({
-  name: "api",
+  name: "todos",
   initialState: [],
   reducers: {
     addCity: (state, action) => {
       const noviGrad = {
-        city: action.payload.city,
-        // id: Date.now(),
-        // id: action.payload.city.id,
-        // fav: false,
+        id: Date.now(),
+        title: action.payload.title,
+        fav: false,
+
+        // city: action.payload.api.city.name,
       };
       state.push(noviGrad);
     },
@@ -40,8 +51,8 @@ export const apiSlice = createSlice({
   },
 
   extraReducers: {
-    [getCitiesAsync.fulfilled]: (state, action) => {
-      return action.payload.data;
+    [getEmAsync.fulfilled]: (state, action) => {
+      return action.payload.podata;
     },
   },
 });
