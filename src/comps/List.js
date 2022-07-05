@@ -1,13 +1,16 @@
-// import React from "react";
+import { useEffect } from "react";
 import Detail from "./Detail";
 import { useDispatch, useSelector } from "react-redux";
-import { resetList } from "../redux/apiSlice";
+import { resetList, getCitiesAsync } from "../redux/apiSlice";
 
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
-
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCitiesAsync());
+  }, [dispatch]);
 
   const handleResetList = () => {
     dispatch(resetList());

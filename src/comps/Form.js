@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addCity } from "../redux/apiSlice";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCity, getCitiesAsync } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
+  const api = useSelector((state) => state.api);
+  console.log("API", api);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addCity({
-        id: Date.now(),
-        city: value,
-        fav: true,
-      })
-    );
+    dispatch(addCity({ city: value }));
+
+    dispatch(getCitiesAsync(value));
   };
+
+  // useEffect(() => {
+
+  // }, [dispatch]);
 
   return (
     <form onSubmit={onSubmit} className="form-inline mt-3 mb-3">

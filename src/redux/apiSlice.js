@@ -1,20 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const apiSlice = createSlice({
+export const getCitiesAsync = createAsyncThunk("call", async (city) => {
+  const resp = await fetch(
+    `https://api.openweathermap.org/data/2.5/forecast?appid=53af3d2fdf27c517f767ade373c0734c&q=${city}`
+  );
+  if (resp.ok) {
+    const data = await resp.json();
+    console.log("ANXIOS", data);
+    return { data };
+  }
+});
+// console.log("anxios", data);
+
+export const apiSlice = createSlice({
   name: "api",
-  initialState: [
-    { id: 1, city: "city1", fav: false },
-    { id: 2, city: "city2", fav: false },
-    { id: 3, city: "city3", fav: false },
-    { id: 4, city: "medo", fav: true },
-  ],
+  initialState: [],
   reducers: {
     addCity: (state, action) => {
       const noviGrad = {
         city: action.payload.city,
-        id: Date.now(),
+        // id: Date.now(),
         // id: action.payload.city.id,
-        fav: false,
+        // fav: false,
       };
       state.push(noviGrad);
     },
@@ -29,6 +36,12 @@ const apiSlice = createSlice({
 
     resetList: (state) => {
       return (state = []);
+    },
+  },
+
+  extraReducers: {
+    [getCitiesAsync.fulfilled]: (state, action) => {
+      return action.payload.data;
     },
   },
 });
