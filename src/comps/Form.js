@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCity } from "../redux/apiSlice";
+import { addCity, getEmAsync } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
@@ -8,13 +8,16 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addCity({
-        id: Date.now(),
-        city: value,
-        fav: true,
-      })
-    );
+    console.log(value);
+    dispatch(getEmAsync({ city: value }));
+    // //
+    // dispatch(
+    //   addCity({
+    //     id: Date.now(),
+    //     city: value,
+    //     fav: true,
+    //   })
+    // );
   };
 
   return (

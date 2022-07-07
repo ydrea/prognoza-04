@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { PropTypes } from "prop-types";
 import { useDispatch } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 
-export default function Detail({ id, city, fav }) {
+// import Api, { getEmAsync } from "../redux/apiCall";
+
+function Detail({ id, city, fav }) {
   console.log(city);
 
   const dispatch = useDispatch();
@@ -21,32 +24,24 @@ export default function Detail({ id, city, fav }) {
   };
 
   return (
-    // <div className='card'>
-    //   <div className='card-inner'>
-    //     <div className='card-front'>
-    //       <img src={item.img} alt='' />
-    //     </div>
-    //     <div className='card-back'>
-    //       <h1>{item.name}</h1>
-    //       <ul>
-    //         <li>
-    //           <strong>Actor Name:</strong> {item.portrayed}
-    //         </li>
-    //         <li>
-    //           <strong>Nickname:</strong> {item.nickname}
-    //         </li>
-    //         <li>
-    //           <strong>Birthday:</strong> {item.birthday}
-    //         </li>
-    //         <li>
-    //           <strong>Status:</strong> {item.status}
-    //         </li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </div>
-
     <li className={`list-item ${fav && "list-item-success"}`}>
+      <div className="card">
+        <div className="card-inner">
+          <div className="card-front">
+            <h1>{city.name}</h1>
+          </div>
+          <div className="card-back">
+            <h1>{city}</h1>
+            <ul>
+              <li>{/* <strong>Actor Name:</strong> {item.portrayed} */}</li>
+              <li>{/* <strong>Nickname:</strong> {item.nickname} */}</li>
+              <li>{/* <strong>Birthday:</strong> {item.birthday} */}</li>
+              <li>{/* <strong>Status:</strong> {item.status} */}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <span>
         <input type="checkbox" checked={fav} onChange={handleFavCheck} />
         {city}
@@ -55,3 +50,10 @@ export default function Detail({ id, city, fav }) {
     </li>
   );
 }
+Detail.propTypes = {
+  id: PropTypes.number,
+  city: PropTypes.string,
+  fav: PropTypes.bool,
+};
+
+export default Detail;
