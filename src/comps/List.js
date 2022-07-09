@@ -6,31 +6,37 @@ import { getEmAsync, resetList } from "../redux/apiSlice";
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
-  // const query = useSelector((state) => state.api.city);
-  // console.log(query);
+  const cityData = useSelector((state) => state.api.city);
+  console.log(cityData);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getEmAsync());
-  }, []);
 
   const handleResetList = () => {
     dispatch(resetList());
   };
 
-  const tenPieces = cities.slice(0, 5).map((i) => {
-    return <Detail id={i.id} city={i.city} fav={i.fav} />;
-  });
+  // const tenPieces = cities.slice(0, 5).map((i) => {
+  //   <Detail id={i.id} city={i.ime} fav={i.fav} />;
+  // });
 
   return (
     <div>
       <div>List</div>
       <button onClick={handleResetList}>Reset</button>
       <ul>
-        {tenPieces}
-        {/* {cities.map((i) => (
-          <Detail id={i.id} city={i.city} fav={i.fav} />
-        ))} */}
+        {cities.length === 0 ? (
+          <div>daj grad</div>
+        ) : (
+          cities.map((i) => {
+            return (
+              <div>
+                <Detail id={i.id} city={i.ime} fav={i.fav} />
+                {/* {data.ime}, {data.id} */}
+              </div>
+            );
+          })
+        )}
+        {/* (
+        )} */}
       </ul>
     </div>
   );

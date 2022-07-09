@@ -14,7 +14,7 @@ export default function App() {
       App
       <Form />
       <List />
-      <Favorites />
+      {/* <Favorites /> */}
     </div>
   );
 }

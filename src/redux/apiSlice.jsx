@@ -19,7 +19,9 @@ export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
 
 export const apiSlice = createSlice({
   name: "api",
-  initialState: [],
+  initialState: [
+
+  ],
   reducers: {
     addCity: (state, action) => {
       const noviGrad = {
@@ -47,8 +49,18 @@ export const apiSlice = createSlice({
   console.log('vozi...')
 },
     [getEmAsync.fulfilled]: (state, action)=>{
-    //  state.push 
-     return action.payload.city
+    //  state.push(action.payload.city) 
+    const noviGrad = {
+      city: action.payload.city,
+      // id: Date.now(),
+      id: action.payload.city.city.id,
+      ime: action.payload.city.city.name,
+      fav: false,
+    };
+    state.push(noviGrad);
+
+
+    //  return action.payload.city
     },
     [getEmAsync.rejected]: (state, action)=>{
       console.log('yilch')
@@ -66,6 +78,8 @@ export const apiSlice = createSlice({
 //    }
 //   },
 });
+
+
 
 export const { addCity, toggleFav, deleteIt, resetList } = apiSlice.actions;
 

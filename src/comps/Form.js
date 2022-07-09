@@ -8,7 +8,7 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
+    // console.log(value);
     dispatch(getEmAsync({ city: value }));
     // //
     // dispatch(
@@ -18,6 +18,8 @@ const Form = () => {
     //     fav: true,
     //   })
     // );
+    // //
+    setValue("");
   };
 
   return (
