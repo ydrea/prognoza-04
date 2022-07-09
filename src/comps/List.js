@@ -6,8 +6,8 @@ import { getEmAsync, resetList } from "../redux/apiSlice";
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
-  const cityData = useSelector((state) => state.api.city);
-  console.log(cityData);
+  // const cityData = useSelector((state) => state.api.city);
+  // console.log(cityData);
   const dispatch = useDispatch();
 
   const handleResetList = () => {
