@@ -19,7 +19,7 @@ export default function List() {
   // });
 
   return (
-    <div>
+    <div className="cards">
       <div>List</div>
       <button onClick={handleResetList}>Reset</button>
       <ul>
