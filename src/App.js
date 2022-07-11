@@ -1,5 +1,5 @@
-import "./styles/style.css";
-// import React from "react";
+// import "./styles/style.css";
+import "./App.css";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 //routes
 import Login from "./comps/Login";
@@ -17,7 +17,7 @@ export default function App() {
   const api = useSelector((state) => state.api);
 
   return (
-    <div className="any">
+    <div className="app">
       <header className="header">{!user.email ? <Login /> : <Logout />}</header>
 
       <div className="form">

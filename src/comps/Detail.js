@@ -3,8 +3,6 @@ import { PropTypes } from "prop-types";
 import { useDispatch } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 
-// import Api, { getEmAsync } from "../redux/apiCall";
-
 function Detail({ id, city, fav }) {
   console.log(city);
 
@@ -28,7 +26,7 @@ function Detail({ id, city, fav }) {
       <div className="card">
         <div className="card-inner">
           <div className="card-front">
-            <h1>{city.name}</h1>
+            <h1 className="h1">{city.name}</h1>
           </div>
           <div className="card-back">
             <h1>{city}</h1>
