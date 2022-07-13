@@ -3,15 +3,14 @@ import Detail from "./Detail";
 import { useDispatch, useSelector } from "react-redux";
 import { getEmAsync, resetList } from "../redux/apiSlice";
 import "../App.css";
-// import {  } from "../redux/apiCall";
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
   const dispatch = useDispatch();
 
-  const handleResetList = () => {
-    dispatch(resetList());
-  };
+  // const handleResetList = () => {
+  //   dispatch(resetList());
+  // };
 
   // const tenPieces = cities.slice(0, 5).map((i) => {
   //   <Detail id={i.id} city={i.ime} fav={i.fav} />;

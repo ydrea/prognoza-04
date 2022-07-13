@@ -1,5 +1,5 @@
-// import "./styles/style.css";
-import "./App.css";
+import "./styles/style.css";
+// import "./App.css";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 //routes
 import Login from "./comps/Login";

@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
 
@@ -18,6 +19,8 @@ body {
 
 .header {
   display: flex;
+  flex-direction: row;
+  background-color: lightgoldenrodyellow;
 }
 
 .form input[type=text] {
@@ -107,4 +110,68 @@ body {
 .card li {
   list-style: none;
   padding-bottom: 10px;
+}
+
+.container {
+  margin-top: 5rem;
+  padding: 3rem;
+}
+.container .success-msg {
+  color: black;
+  background: lightgoldenrodyellow;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.container h1 {
+  font-size: 2rem;
+  color: #293241;
+  margin-bottom: 2rem;
+}
+.container label,
+.container input {
+  color: #293241;
+}
+.container label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.container input {
+  padding: 0.5rem 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+.container .form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.container button {
+  color: lightgoldenrodyellow;
+  width: 100%;
+  font-size: 1.4rem;
+  background: rgb(6, 251, 113);
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 1.2rem;
+  margin-top: 0.5rem;
+}
+.container button:hover {
+  background-color: #ff8700;
+}
+.container .input-error {
+  border-color: #e63946;
+}
+.container .error {
+  color: #e63946;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+.container .disabled-btn {
+  cursor: not-allowed;
+  background-color: lightgoldenrodyellow;
 }/*# sourceMappingURL=style.css.map */

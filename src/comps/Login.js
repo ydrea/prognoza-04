@@ -1,33 +1,102 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { update } from '../redux/userSlice';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import "../styles/style.css";
+// import { useSelector, useDispatch } from "react-redux";
+import { update } from "../redux/userSlice";
 
-export default function Login() {
-    
-    const [password, passwordSet] = useState("");
-    const [email, emailSet] = useState("");
-    const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
+const Login = () => {
+  const intialValues = { email: "", password: "" };
+  const [formValues, setFormValues] = useState(intialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const dispatch = useDispatch();
 
-    const submitIt = (e) => {
-        e.preventDefault();
-        dispatch(update({ email, password }));
-        };
-    
+  const submit = () => {
+    // console.log(formValues);
+
+    dispatch(update(formValues));
+  };
+
+  //input change handler
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  //form submission handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmitting(true);
+  };
+
+  //form validation handler
+  const validate = (values) => {
+    let errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (!values.email) {
+      errors.email = "Cannot be blank";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!values.password) {
+      errors.password = "Cannot be blank";
+    } else if (values.password.length < 4) {
+      errors.password = "Password must be more than 4 characters";
+    }
+
+    return errors;
+  };
+
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmitting) {
+      submit();
+    }
+  }, [formErrors]);
 
   return (
-    <form 
-    // onSubmit={submitIt}
-    >
-        <input type='email' name='email' placeholder='Email' 
-                onChange={(e) => emailSet(e.target.value)}
-        // onChange={changeIt} value={login.email}
-        />
-        <input type='pwd' name='pwd' placeholder='Password'
-                onChange={(e) => passwordSet(e.target.value)}
-        // onChange={changeIt} value={login.pwd}
-        />
-        <button disabled={user.pending} onClick={submitIt}>Login</button>
-        </form>
-  )
-}
+    <div className="container">
+      <h1>Sign in to continue</h1>
+      {Object.keys(formErrors).length === 0 && isSubmitting && (
+        <span className="success-msg">Form submitted successfully</span>
+      )}
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="form-row">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={formValues.email}
+            onChange={handleChange}
+            className={formErrors.email && "input-error"}
+          />
+          {formErrors.email && (
+            <span className="error">{formErrors.email}</span>
+          )}
+        </div>
+
+        <div className="form-row">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={formValues.password}
+            onChange={handleChange}
+            className={formErrors.password && "input-error"}
+          />
+          {formErrors.password && (
+            <span className="error">{formErrors.password}</span>
+          )}
+        </div>
+
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;

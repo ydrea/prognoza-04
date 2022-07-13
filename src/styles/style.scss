@@ -6,7 +6,7 @@
 
 * {
   box-sizing: border-box;
-  // margin: 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -25,6 +25,8 @@ body {
 
 .header {
   display: flex;
+  flex-direction: row;
+  background-color: $light;
 }
 .form {
   input[type="text"] {
@@ -113,4 +115,79 @@ body {
 .card li {
   list-style: none;
   padding-bottom: 10px;
+}
+.container {
+  margin-top: 5rem;
+  padding: 3rem;
+
+  .success-msg {
+    color: $dark;
+    background: $light;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: $text;
+    margin-bottom: 2rem;
+  }
+
+  label,
+  input {
+    color: $text;
+  }
+
+  label {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    // border: 2px solid rgba($dark, 0.8);
+    padding: 0.5rem 1rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    color: $light;
+    width: 100%;
+    font-size: 1.4rem;
+    background: $mid;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem 1.2rem;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background-color: $alert;
+    }
+  }
+
+  .input-error {
+    border-color: $error;
+  }
+
+  .error {
+    color: $error;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  .disabled-btn {
+    cursor: not-allowed;
+    background-color: $light;
+  }
 }
