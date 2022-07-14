@@ -13,11 +13,11 @@ function Logout() {
     dispatch(remove());
   };
   return (
-    <div>
+    <div className="logout-container">
       <button disabled={user.pending} onClick={deleteIt}>
         Logout
       </button>
-      <span>Alo, {user.email} </span>
+      <span>{user.email} </span>
     </div>
   );
 }

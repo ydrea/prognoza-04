@@ -10,20 +10,13 @@ const Form = () => {
     e.preventDefault();
     // console.log(value);
     dispatch(getEmAsync({ city: value }));
-    // //
-    // dispatch(
-    //   addCity({
-    //     id: Date.now(),
-    //     city: value,
-    //     fav: true,
-    //   })
-    // );
+
     // //
     setValue("");
   };
 
   return (
-    <form onSubmit={onSubmit} className="form-inline mt-3 mb-3">
+    <form onSubmit={onSubmit} className="form-container">
       <label className="sr-only">Name</label>
       <input
         type="text"

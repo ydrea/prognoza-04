@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Detail from "./Detail";
 import { useDispatch, useSelector } from "react-redux";
 import { getEmAsync, resetList } from "../redux/apiSlice";
-import "../App.css";
+import "../styles/style.css";
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
@@ -17,9 +17,9 @@ export default function List() {
   // });
 
   return (
-    <div className="container">
+    <div className="list-container">
       {cities.length === 0 ? (
-        <div className="instruction">Enter a city</div>
+        <div></div>
       ) : (
         cities.map((i) => {
           return (

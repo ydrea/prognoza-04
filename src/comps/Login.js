@@ -36,15 +36,15 @@ const Login = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!values.email) {
-      errors.email = "Cannot be blank";
+      errors.email = "Unesite email";
     } else if (!regex.test(values.email)) {
-      errors.email = "Invalid email format";
+      errors.email = "Neispravan format email adrese";
     }
 
     if (!values.password) {
-      errors.password = "Cannot be blank";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters";
+      errors.password = "Unesite lozinku!";
+    } else if (values.password.length < 6) {
+      errors.password = "Lozinka mora imati min. 6 znakova";
     }
 
     return errors;
@@ -55,10 +55,9 @@ const Login = () => {
       submit();
     }
   }, [formErrors]);
-
+  //
   return (
-    <div className="container">
-      <h1>Sign in to continue</h1>
+    <div className="login-container">
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-msg">Form submitted successfully</span>
       )}
@@ -79,7 +78,7 @@ const Login = () => {
         </div>
 
         <div className="form-row">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Lozinka</label>
           <input
             type="password"
             name="password"
@@ -93,7 +92,7 @@ const Login = () => {
           )}
         </div>
 
-        <button type="submit">Sign In</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
