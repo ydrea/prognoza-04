@@ -17,17 +17,17 @@ const Form = () => {
 
   return (
     <form onSubmit={onSubmit} className="form-container">
-      <label className="sr-only">Name</label>
+      <label className="instruction">Unesite ime grada</label>
       <input
+        className="inputCity"
         type="text"
-        className="form-control mb-2 mr-sm-2"
         placeholder="City..."
         value={value}
         onChange={(e) => setValue(e.target.value)}
       ></input>
 
-      <button type="submit" className="btn btn-primary mb-2">
-        Submit
+      <button type="submit" className="button">
+        Dodaj
       </button>
     </form>
   );

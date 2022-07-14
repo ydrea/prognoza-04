@@ -1,0 +1,20 @@
+%clickables {
+  color: $light;
+  font-size: 1.2rem;
+  background: $dark;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem 0.1rem;
+  margin-top: 0.1rem;
+
+  &:hover {
+    background-color: $alert;
+  }
+}
+.link {
+  @extend %clickables;
+  text-decoration: none;
+}
+.button {
+  @extend %clickables;
+}

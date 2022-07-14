@@ -1,6 +1,7 @@
 @import "./fonts";
 @import "./colors";
 // @import "./mixins";
+@import "./clickables";
 
 * {
   box-sizing: border-box;
@@ -33,33 +34,29 @@
     justify-content: space-evenly;
     align-items: center;
   }
-  .link {
-    text-decoration: none;
-    color: $light;
-    font-size: 1.2rem;
-    background: $dark;
-    border: none;
-    cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    margin-top: 0.4rem;
-
-    &:hover {
-      background-color: $alert;
-    }
-  }
+  //
 }
 
 // form
-.form {
-  input[type="text"] {
-    display: block;
-    padding: 10px;
+.form-container {
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+
+  .instruction {
+    margin-right: 2rem;
+  }
+  .inputCity {
+    display: inline-block;
+    padding: 1rem;
     font-size: 20px;
-    border: 2;
-    border-radius: 2px;
+    border-bottom: 2;
+    // border-radius: 2px;
     width: 30%;
-    margin: 10px;
-    outline: none;
+    height: 1rem;
+    margin: 1rem;
+    // outline: none;
   }
 }
 
@@ -69,6 +66,8 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap: 5px;
 }
+
+//cards
 .cards {
   background-color: $light;
   .cards > div {
@@ -135,23 +134,12 @@
 .login-container {
   margin-top: 1rem;
   padding: 1rem;
-
-  .success-msg {
-    color: $dark;
-    background: $light;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+  display: flex;
+  flex-direction: column;
 
   h1 {
     font-size: 12px;
     color: $text;
-    // margin-bottom: 1rem;
   }
 
   label,
@@ -177,21 +165,6 @@
     margin-bottom: 1.5rem;
   }
 
-  button {
-    color: $light;
-    width: 70%;
-    font-size: 1.2rem;
-    background: $dark;
-    border: none;
-    cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    margin-top: 0.4rem;
-
-    &:hover {
-      background-color: $alert;
-    }
-  }
-
   .input-error {
     border-color: $error;
   }
@@ -212,21 +185,8 @@
 //logout
 
 .logout-container {
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
   padding: 1rem;
-
-  button {
-    color: $light;
-    width: 70%;
-    font-size: 1.2rem;
-    background: $dark;
-    border: none;
-    cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    margin-top: 0.4rem;
-
-    &:hover {
-      background-color: $alert;
-    }
-  }
 }
