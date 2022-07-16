@@ -7,10 +7,7 @@ function Slija() {
   console.log(slija);
   return (
     <div>
-      Slija
-      <p>min</p>
-      <icon>{slija}</icon>
-      <p>max</p>
+      <img src={`https://openweathermap.org/img/wn/${slija}.png`} />
     </div>
   );
 }
