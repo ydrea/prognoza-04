@@ -26,8 +26,8 @@ export const apiSlice = createSlice({
     addCity: (state, action) => {
       const noviGrad = {
         city: action.payload.city,
-        id: Date.now(),
-        // id: action.payload.city.id,
+        // id: Date.now(),
+        id: action.payload.city.id,
         fav: false,
       };
       state.push(noviGrad);

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
-import { PropTypes } from "prop-types";
-import { useDispatch } from "react-redux";
+import Slija from "./Slija";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 
 function Detail({ id, city, fav }) {
-  console.log(city);
+  // console.log(city);
+  // const temp = useSelector((state) => state.api);
+  // console.log(temp);
 
   const dispatch = useDispatch();
 
@@ -29,19 +31,20 @@ function Detail({ id, city, fav }) {
         <h1 className="h1">{city}</h1>
         <button onClick={handleDeleteIt}>X</button>
       </span>
+
       <ul className="ulist">
-        <li>{/* <strong>Actor Name:</strong> {item.portrayed} */}</li>
-        <li>{/* <strong>Nickname:</strong> {item.nickname} */}</li>
-        <li>{/* <strong>Birthday:</strong> {item.birthday} */}</li>
-        <li>{/* <strong>Status:</strong> {item.status} */}</li>
+        <li>
+          <strong>Min:</strong>0
+        </li>
+        <li>
+          <Slija id={id} />
+        </li>
+        <li>
+          <strong>Max:</strong>100
+        </li>
       </ul>
     </div>
   );
 }
-Detail.propTypes = {
-  id: PropTypes.number,
-  city: PropTypes.string,
-  fav: PropTypes.bool,
-};
 
 export default Detail;

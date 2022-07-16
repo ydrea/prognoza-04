@@ -6,8 +6,8 @@ import "../styles/style.css";
 export default function List() {
   const cities = useSelector((state) => state.api);
   console.log(cities);
-  const dispatch = useDispatch();
 
+  // const dispatch = useDispatch();
   // const handleResetList = () => {
   //   dispatch(resetList());
   // };

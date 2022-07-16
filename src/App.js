@@ -9,6 +9,8 @@ import Favorites from "./comps/Favorites";
 //comps
 import Form from "./comps/Form";
 import List from "./comps/List";
+import Flat from "./json/Flat";
+
 //redux
 import { useSelector } from "react-redux";
 //
@@ -42,6 +44,7 @@ export default function App() {
             </Routes>
           ) : null}
           <List />
+          {/* <Flat api={api} /> */}
         </BrowserRouter>
       </div>
     </div>
