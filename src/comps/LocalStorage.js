@@ -13,7 +13,7 @@ const useLocalStorage = (kljuc, bazniStejt) => {
 function LocalStorage() {
   const [je, jelJe] = useLocalStorage("open-sesame", false);
   const handleToggle = () => {
-    openSet(!open);
+    jelJe(!je);
   };
 
   return (
