@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-const useLocalStorage = (kljuc, bazniStejt) => {
+
+export const useLocalStorage = (kljuc, bazniStejt) => {
   const [open, openSet] = useState(
     JSON.parse(localStorage.getItem(kljuc)) || bazniStejt
   );
@@ -19,7 +20,7 @@ function LocalStorage() {
   return (
     <div>
       <button onClick={() => handleToggle}>toggle</button>
-      {open && <p>LocalStorage</p>}
+      {je && <p>LocalStorage</p>}
     </div>
   );
 }
