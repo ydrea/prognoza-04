@@ -81,12 +81,20 @@
 .card {
   cursor: pointer;
   background-color: lightgoldenrodyellow;
-  height: 20vh;
+  height: 30vh;
   width: 16vw;
   border: 1px #293241 solid;
 }
 .card .ulist {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   list-style-type: none;
+}
+.card .ulist .li {
+  color: #293241;
 }
 .card .command {
   display: flex;

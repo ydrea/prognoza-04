@@ -1,0 +1,27 @@
+import { useEffect, useState } from "react";
+const useLocalStorage = (kljuc, bazniStejt) => {
+  const [open, openSet] = useState(
+    JSON.parse(localStorage.getItem(kljuc)) || bazniStejt
+  );
+
+  useEffect(() => {
+    localStorage.setItem(kljuc, JSON.stringify(open));
+  }, [open, kljuc]);
+  return [open, openSet];
+};
+
+function LocalStorage() {
+  const [je, jelJe] = useLocalStorage("open-sesame", false);
+  const handleToggle = () => {
+    openSet(!open);
+  };
+
+  return (
+    <div>
+      <button onClick={() => handleToggle}>toggle</button>
+      {open && <p>LocalStorage</p>}
+    </div>
+  );
+}
+
+export default LocalStorage;

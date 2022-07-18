@@ -70,19 +70,25 @@
 
 .cards {
   display: flex;
-  // background-color: $dark;
 }
 
 .card {
   cursor: pointer;
   background-color: $light;
-  height: 20vh;
+  height: 30vh;
   width: 16vw;
   border: 1px $dark solid;
 
   .ulist {
-    // background-color: aquamarine;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
+    .li {
+      color: $dark;
+    }
   }
   .command {
     display: flex;

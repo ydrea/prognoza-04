@@ -33,15 +33,11 @@ function Detail({ id, city, fav }) {
       </span>
 
       <ul className="ulist">
-        <li>
-          <strong>Min:</strong>0
-        </li>
+        <li>Min:</li>
         <li>
           <Slija id={id} />
         </li>
-        <li>
-          <strong>Max:</strong>100
-        </li>
+        <li>Max:</li>
       </ul>
     </div>
   );
