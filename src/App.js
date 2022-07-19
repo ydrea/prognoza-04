@@ -9,10 +9,11 @@ import Favorites from "./comps/Favorites";
 //comps
 import Form from "./comps/Form";
 import List from "./comps/List";
-import Flat from "./json/Flat";
+// import Flat from "./json/Flat";
 
 //redux
 import { useSelector } from "react-redux";
+import LocalStorage from "./comps/LocalStorage";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
@@ -44,7 +45,6 @@ export default function App() {
             </Routes>
           ) : null}
           <List />
-          {/* <Flat api={api} /> */}
         </BrowserRouter>
       </div>
     </div>

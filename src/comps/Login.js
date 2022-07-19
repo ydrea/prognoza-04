@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "../styles/style.css";
 // import { useSelector, useDispatch } from "react-redux";
 import { update } from "../redux/userSlice";
-import { useLocalStorage } from "./LocalStorage";
+// import { useLocalStorage } from "./LocalStorage";
 const Login = () => {
   const intialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(intialValues);
@@ -13,7 +13,9 @@ const Login = () => {
 
   const submit = () => {
     // console.log(formValues);
-
+    const token = [formValues.email, Date.now()];
+    console.log(token);
+    localStorage.setItem("userX", JSON.stringify(token));
     dispatch(update(formValues));
   };
 
@@ -22,14 +24,11 @@ const Login = () => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-  //
-  const token = { to: formValues.email, ken: Date.now() };
-  console.log(token);
+
   //form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    useLocalStorage("x-myToken", token);
     setIsSubmitting(true);
   };
 

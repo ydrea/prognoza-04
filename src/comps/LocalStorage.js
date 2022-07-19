@@ -20,7 +20,7 @@ function LocalStorage() {
   return (
     <div>
       <button onClick={() => handleToggle}>toggle</button>
-      {je && <p>LocalStorage</p>}
+      {je && <p>jel {je}</p>}
     </div>
   );
 }

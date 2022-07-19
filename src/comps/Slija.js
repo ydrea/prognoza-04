@@ -1,13 +1,23 @@
 import { useSelector } from "react-redux";
+const iiii = [];
 
-function Slija() {
-  const slija = useSelector(
-    (state) => state.api[0].city.list[0].weather[0].icon
+function Slija({ id }) {
+  const icons = useSelector((state) =>
+    state.api.map((i) => i.city.list[0].weather[0].icon)
   );
-  console.log(slija);
+  console.log(icons);
+
+  const icon = icons.pop();
+  console.log(icon);
+
   return (
     <div>
-      <img src={`https://openweathermap.org/img/wn/${slija}.png`} />
+      {/* {icons.slice(0).map((e, id) => {
+        return (
+          <img src={`https://openweathermap.org/img/wn/${e}.png`} key={id} />
+        );
+      })} */}
+      <img src={`https://openweathermap.org/img/wn/${icon}.png`} />
     </div>
   );
 }

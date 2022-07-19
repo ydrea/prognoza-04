@@ -15,11 +15,11 @@ export default function Flat({ api }) {
         flattened[key] = value;
       }
 
-      const Flatt = JSON.stringify(flattened);
+      const Flat = JSON.stringify(flattened);
     });
     // return flattened;
     // console.log("a", Flatt);
   };
 
-  return <div>{Flatt}</div>;
+  return <div>{Flat}</div>;
 }

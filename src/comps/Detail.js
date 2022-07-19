@@ -3,7 +3,7 @@ import Slija from "./Slija";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 
-function Detail({ id, city, fav }) {
+function Detail({ id, ime, fav, icon }) {
   // console.log(city);
   // const temp = useSelector((state) => state.api);
   // console.log(temp);
@@ -28,15 +28,13 @@ function Detail({ id, city, fav }) {
       <span className="command">
         <input type="checkbox" checked={fav} onChange={handleFavCheck} />
 
-        <h1 className="h1">{city}</h1>
+        <h1 className="h1">{ime}</h1>
         <button onClick={handleDeleteIt}>X</button>
       </span>
 
       <ul className="ulist">
         <li>Min:</li>
-        <li>
-          <Slija id={id} />
-        </li>
+        <li>{icon}</li>
         <li>Max:</li>
       </ul>
     </div>
