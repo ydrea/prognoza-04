@@ -73,7 +73,6 @@
 }
 
 .card {
-  cursor: pointer;
   background-color: $light;
   height: 30vh;
   width: 16vw;
@@ -102,6 +101,7 @@
   .h1 {
     color: $dark;
     font-size: 1rem;
+    cursor: pointer;
   }
 }
 

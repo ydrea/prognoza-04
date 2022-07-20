@@ -1,42 +1,18 @@
-import React, { useEffect } from "react";
-import Slija from "./Slija";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteIt, toggleFav } from "../redux/apiSlice";
+import { useSelector } from "react-redux";
 
-function Detail({ id, ime, fav, icon }) {
-  // console.log(city);
-  // const temp = useSelector((state) => state.api);
-  // console.log(temp);
+import { useNavigate } from "react-router-dom";
 
-  const dispatch = useDispatch();
-
-  const handleFavCheck = () => {
-    dispatch(
-      toggleFav({
-        id: id,
-        fav: !fav,
-      })
-    );
-  };
-
-  const handleDeleteIt = () => {
-    dispatch(deleteIt({ id: id }));
-  };
-
+function Detail({ id }) {
+  const icons = useSelector((state) =>
+    state.api.map((i) => i.city.list[0].weather[0].icon)
+  );
+  console.log(icons);
+  const navigate = useNavigate();
   return (
-    <div className="card">
-      <span className="command">
-        <input type="checkbox" checked={fav} onChange={handleFavCheck} />
-
-        <h1 className="h1">{ime}</h1>
-        <button onClick={handleDeleteIt}>X</button>
-      </span>
-
-      <ul className="ulist">
-        <li>Min:</li>
-        <li>{icon}</li>
-        <li>Max:</li>
-      </ul>
+    <div>
+      Detail
+      <div>5 days</div>
+      <button onClick={navigate(-1)}>Natrag</button>
     </div>
   );
 }

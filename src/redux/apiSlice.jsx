@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
   const resp = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?appid=53af3d2fdf27c517f767ade373c0734c&q=${payload.city}`, {
+    `https://api.openweathermap.org/data/2.5/forecast?appid=53af3d2fdf27c517f767ade373c0734c&units=metric&q=${payload.city}`, {
       // 
     }
       );

@@ -79,7 +79,6 @@
 }
 
 .card {
-  cursor: pointer;
   background-color: lightgoldenrodyellow;
   height: 30vh;
   width: 16vw;
@@ -108,6 +107,7 @@
 .card .h1 {
   color: #293241;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .login-container {

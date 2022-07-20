@@ -1,11 +1,20 @@
 import "./styles/style.css";
 // import "./App.css";
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  NavLink,
+  BrowserRouter,
+  Routes,
+  Route,
+  // Outlet,
+  // useParams,
+} from "react-router-dom";
 //routes
+import Card from "./comps/Card";
 import Login from "./comps/Login";
 import Logout from "./comps/Logout";
 import Detail from "./comps/Detail";
 import Favorites from "./comps/Favorites";
+import Four0Four from "./comps/Four0Four";
 //comps
 import Form from "./comps/Form";
 import List from "./comps/List";
@@ -13,12 +22,14 @@ import List from "./comps/List";
 
 //redux
 import { useSelector } from "react-redux";
-import LocalStorage from "./comps/LocalStorage";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
   const api = useSelector((state) => state.api);
-
+  //
+  // let { cityName } = useParams;
+  // console.log(cityName);
+  //
   return (
     <div className="app">
       <header className="header">{!user.email ? <Login /> : <Logout />}</header>
@@ -29,19 +40,23 @@ export default function App() {
             <div className="instruction">Unesi korisničke podatke</div>
           ) : (
             <div className="nav">
-              <Link className="link" to="/">
+              <NavLink className="link" to="/">
                 Weather App
-              </Link>
-              <Link className="link" to="/favorites">
+              </NavLink>
+              <NavLink className="link" to="/favorites">
                 Omiljeni
-              </Link>
+              </NavLink>
             </div>
           )}
           {user.password ? (
             <Routes>
               <Route path="/" element={<Form />} />
-              <Route path="/detail" element={<Detail />} />
+              <Route path="/weather" />
+              <Route path="/card" element={<Card />}>
+                <Route path="detail" element={<Detail />} />
+              </Route>
               <Route path="/favorites" element={<Favorites />} />
+              <Route path="*" element={<Four0Four />} />
             </Routes>
           ) : null}
           <List />
