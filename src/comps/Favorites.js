@@ -8,8 +8,7 @@ export default function Favorites() {
   return (
     <>
       <div>Omiljeni</div>
-      <h4 className="mt-3">Broj omiljenih: {faved.length}</h4>;
-      {faved.map((f) => f.ime)}
+      <h4>Broj omiljenih: {faved.length}</h4>;{faved.map((f) => f.ime)}
     </>
   );
 }

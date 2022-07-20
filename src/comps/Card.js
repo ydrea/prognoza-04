@@ -1,5 +1,5 @@
 // import React, { useEffect } from "react";
-import Slija from "./Slija";
+// import Slija from "./Slija";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 import { useNavigate, Outlet } from "react-router-dom";
@@ -26,8 +26,10 @@ function Card({ id, ime, fav, icon, min, max }) {
     <div className="card">
       <span className="command">
         <input type="checkbox" checked={fav} onChange={handleFavCheck} />
-
-        <h1 className="h1" link to="detail">
+        <h1
+          className="h1"
+          // link to="detail"
+        >
           {ime}
         </h1>
         <button onClick={handleDeleteIt}>X</button>

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Detail({ id }) {
   const icons = useSelector((state) =>
@@ -8,10 +8,12 @@ function Detail({ id }) {
   );
   console.log(icons);
   const navigate = useNavigate();
+  const params = useParams();
+  const cityName = params.cityName;
   return (
     <div>
       Detail
-      <div>5 days</div>
+      <div>5 days of {cityName}</div>
       <button onClick={navigate(-1)}>Natrag</button>
     </div>
   );

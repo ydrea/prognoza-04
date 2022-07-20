@@ -43,19 +43,23 @@ export default function App() {
               <NavLink className="link" to="/">
                 Weather App
               </NavLink>
-              <NavLink className="link" to="/favorites">
+              <NavLink className="link" to="favorites">
                 Omiljeni
               </NavLink>
             </div>
           )}
           {user.password ? (
             <Routes>
-              <Route path="/" element={<Form />} />
-              <Route path="/weather" />
-              <Route path="/card" element={<Card />}>
-                <Route path="detail" element={<Detail />} />
+              <Route path="/" element={<Form />}>
+                <Route index="list" element={<List />} />
+                {/* <Route path="favorites" element={<Favorites />} /> */}
               </Route>
+              {/* <Route path="/weather" /> */}
+
               <Route path="/favorites" element={<Favorites />} />
+              <Route path="/card" element={<Card />}>
+                <Route path=":cityName" element={<Detail />} />
+              </Route>
               <Route path="*" element={<Four0Four />} />
             </Routes>
           ) : null}

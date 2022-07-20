@@ -31,6 +31,7 @@ export default function List() {
           return (
             <div className="cards">
               <Card
+                key={i.id + 1}
                 id={i.id}
                 ime={i.ime}
                 fav={i.fav}
