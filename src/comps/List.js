@@ -29,17 +29,16 @@ export default function List() {
       ) : (
         cities.map((i) => {
           return (
-            <div className="cards">
-              <Card
-                key={i.id + 1}
-                id={i.id}
-                ime={i.ime}
-                fav={i.fav}
-                icon={i.city.list[0].weather[0].icon}
-                min={i.city.list[0].main.temp_min}
-                max={i.city.list[0].main.temp_max}
-              />
-            </div>
+            <Card
+              className="cards"
+              key={i.id + 1}
+              id={i.id}
+              ime={i.ime}
+              fav={i.fav}
+              icon={i.city.list[0].weather[0].icon}
+              min={i.city.list[0].main.temp_min}
+              max={i.city.list[0].main.temp_max}
+            />
           );
         })
       )}

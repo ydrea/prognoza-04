@@ -55,13 +55,13 @@ export default function App() {
                 <Route path="favorites" element={<Favorites />} />
                 <Route path="list" element={<List />} />
               </Route>
-              <Route path="/card" element={<Card />}>
-                <Route path=":ime" element={<Detail />} />
-              </Route>
+              <Route path="card" element={<Card />} />
+              <Route path="card/:imeGrada" element={<Detail />} />
+
               <Route path="*" element={<Four0Four />} />
             </Routes>
           ) : null}
-          <Outlet />
+          {api.length !== 0 ? <Outlet /> : null}
         </BrowserRouter>
       </div>
     </div>

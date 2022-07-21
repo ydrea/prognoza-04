@@ -11,8 +11,8 @@ function Form() {
         Conform
       </button>
       <nav>
-        <Link to="list">listA</Link>
-        <Link to="fav">favA</Link>
+        <Link to="list">list</Link>
+        <Link to="fav">fav</Link>
       </nav>
       <Outlet />
     </div>

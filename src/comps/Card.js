@@ -1,10 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
-import { useNavigate, Outlet, Link } from "react-router-dom";
+import { useNavigate, Outlet, Link, useParams } from "react-router-dom";
 function Card({ id, ime, fav, icon, min, max }) {
   const dispatch = useDispatch();
 
   // const navigate = useNavigate();
+
+  // const params = useParams();
+  // console.log(params);
+  // const imeGrada = params.imeGrada;
 
   const handleFavCheck = () => {
     dispatch(
@@ -24,7 +28,7 @@ function Card({ id, ime, fav, icon, min, max }) {
     <div className="card">
       <span className="command">
         <input type="checkbox" checked={fav} onChange={handleFavCheck} />
-        <Link className="link" to={`${ime}`}>
+        <Link className="link" to={`/card/${ime}`}>
           {ime}
         </Link>
         <button onClick={handleDeleteIt}>X</button>
