@@ -40,7 +40,7 @@ export default function App() {
             <div className="instruction">Unesi korisničke podatke</div>
           ) : (
             <div className="nav">
-              <Link className="link" to="/">
+              <Link className="link" to="list">
                 Weather
               </Link>
               <Link className="link" to="favorites">
@@ -55,7 +55,6 @@ export default function App() {
                 <Route path="favorites" element={<Favorites />} />
                 <Route path="list" element={<List />} />
               </Route>
-              {/* <Route path="/favorites" element={<Favorites />} /> */}
               <Route path="/card" element={<Card />}>
                 <Route path=":ime" element={<Detail />} />
               </Route>
