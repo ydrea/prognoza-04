@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Outlet } from "react-router-dom";
 import { addCity, getEmAsync } from "../redux/apiSlice";
 
 const Form = () => {
@@ -16,20 +17,23 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="form-container">
-      <label className="instruction">Unesite ime grada</label>
-      <input
-        className="inputCity"
-        type="text"
-        placeholder="City..."
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      ></input>
+    <>
+      <form onSubmit={onSubmit} className="form-container">
+        <label className="instruction">Unesite ime grada</label>
+        <input
+          className="inputCity"
+          type="text"
+          placeholder="City..."
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        ></input>
 
-      <button type="submit" className="button">
-        Dodaj
-      </button>
-    </form>
+        <button type="submit" className="button">
+          Dodaj
+        </button>
+      </form>
+      <Outlet />
+    </>
   );
 };
 
