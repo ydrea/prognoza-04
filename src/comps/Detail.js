@@ -13,11 +13,11 @@ function Detail() {
   //
   const params = useParams();
   console.log(params);
-  const imeGrada = params.imeGrada;
+  const ime = params.ime;
   return (
     <div>
       Detail
-      <div>5 days of {imeGrada}</div>
+      <div>5 days of {ime}</div>
       <button onClick={navigate(-1)}>Natrag</button>
     </div>
   );

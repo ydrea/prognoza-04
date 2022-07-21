@@ -56,7 +56,7 @@ export default function App() {
                 <Route path="list" element={<List />} />
               </Route>
               <Route path="card" element={<Card />} />
-              <Route path="card/:imeGrada" element={<Detail />} />
+              <Route path="card/:ime" element={<Detail />} />
 
               <Route path="*" element={<Four0Four />} />
             </Routes>
