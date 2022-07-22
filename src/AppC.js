@@ -22,6 +22,7 @@ import List from "./comps/List";
 
 //redux
 import { useSelector } from "react-redux";
+import Table from "./comps/Table";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
@@ -56,7 +57,9 @@ export default function App() {
                 <Route path="list" element={<List />} />
               </Route>
               <Route path="card" element={<Card />} />
-              <Route path="card/:ime" element={<Detail />} />
+              <Route path="card/:ime" element={<Detail />}>
+                <Route path="card/:ime/:dan" element={<Table />} />
+              </Route>
 
               <Route path="*" element={<Four0Four />} />
             </Routes>
