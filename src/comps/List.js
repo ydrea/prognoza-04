@@ -11,7 +11,6 @@ export default function List() {
   // const icon = useSelector((state) =>
   //   state.api.map((i) => i.city.list[0].weather[0].icon)
   // );
-  // console.log(icon);
 
   // const dispatch = useDispatch();
   // const handleResetList = () => {

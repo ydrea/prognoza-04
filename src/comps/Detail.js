@@ -1,24 +1,30 @@
 import { useSelector } from "react-redux";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Detail() {
+  //drill
+  const take5 = useSelector((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt))
+  );
+  console.log(take5);
   //
   const icons = useSelector((state) =>
-    state.api.map((i) => i.city.list[0].weather[0].icon)
+    state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
   );
   console.log(icons);
   //
-  const navigate = useNavigate();
-  //
+
+  //route
   const params = useParams();
   console.log(params);
   const ime = params.ime;
+  //
   return (
     <div>
       Detail
       <div>5 days of {ime}</div>
-      <button onClick={navigate(-1)}>Natrag</button>
+      {take5}, {icons}
     </div>
   );
 }

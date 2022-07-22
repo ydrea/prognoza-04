@@ -1,25 +1,3 @@
-// const flattenObject = (dataJson) => {
-//   const flattened = {};
-
-//   Object.keys(dataJson).forEach((key) => {
-//     const value = dataJson[key];
-//     console.log(value);
-//     if (typeof value === "object" && value !== null && !Array.isArray(value)) {
-//       Object.assign(flattened, flattenObject(value));
-//     } else {
-//       flattened[key] = value;
-//     }
-
-//     const flatt = JSON.stringify(flattened);
-
-//     console.log("a", flatt);
-
-//     return flatt;
-//   });
-// };
-
-// export default flatt;
-
 const dataJson = {
   cod: "200",
   message: 0,
