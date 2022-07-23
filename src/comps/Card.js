@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
 import { useNavigate, Outlet, Link, useParams } from "react-router-dom";
+//
 function Card({ id, ime, fav, icon, min, max }) {
   const dispatch = useDispatch();
 

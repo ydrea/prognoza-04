@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 function Table() {
   //
 
   const params = useParams();
   console.log(params);
   const ime = params.ime;
-  const dan = params.ime.dan;
+  const dan = params.dan;
   console.log(dan);
   //  //drill
   // // dates
@@ -15,10 +16,10 @@ function Table() {
   // );
   // console.log(takeDate);
   //icons
-  // const icons = useSelector((state) =>
-  //   state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
-  // );
-  // console.log(icons);
+  const icons = useSelector((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
+  );
+  console.log(icons);
   const lista = useSelector((state) => state.api.map((i) => i.city.list));
   console.log(lista);
   return (
@@ -27,14 +28,14 @@ function Table() {
       <table>
         <thead>
           <tr>
-            <th>table</th>
+            <th>table m</th>
           </tr>
         </thead>
         <tbody>
           {lista.map((i) => (
             <tr>
               <td>{i.dt_txt} </td>
-              <td>{i.weather[0].icon}</td>
+              {/* <td>{i.weather[0].icon}</td> */}
             </tr>
           ))}
         </tbody>
