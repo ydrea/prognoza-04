@@ -1,6 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 function Table() {
+  //
+
+  const params = useParams();
+  console.log(params);
+  const ime = params.ime;
+  const dan = params.ime.dan;
+  console.log(dan);
   //  //drill
   // // dates
   // const takeDate = useSelector((state) =>
@@ -18,7 +25,11 @@ function Table() {
     <div>
       Table
       <table>
-        <thead>Table</thead>
+        <thead>
+          <tr>
+            <th>table</th>
+          </tr>
+        </thead>
         <tbody>
           {lista.map((i) => (
             <tr>

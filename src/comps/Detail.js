@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link, Outlet, useParams } from "react-router-dom";
-import Table from "./Table";
+// import Table from "./Table";
 function Detail() {
   //  //drill
 
@@ -22,23 +22,20 @@ function Detail() {
   const params = useParams();
   console.log(params);
   const ime = params.ime;
-  // const dan = params.ime.dan;
-  // console.log(dan);
+  const dan = params.ime.dan;
+  console.log(dan);
   //
   return (
     <div>
-      Detail
+      <h1>{ime}</h1>
       <div>
         5
         {lista[0].map((i) => (
           <ul>
-            <li key={i.dt}>{i.dt}</li>
+            <li key={i.dt + 1}>{i.dt}</li>
           </ul>
         ))}
-        {/* <Link to={`/card/${ime}/${dan}`}>
-          {dan} */}
-        of {ime}
-        {/* </Link> */}
+        <Link to={`/card/${ime}/${dan}`}>{dan}</Link>
       </div>
       {take5}, {icons}
       <Outlet />
