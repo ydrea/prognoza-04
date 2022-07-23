@@ -8,17 +8,18 @@ function Detail() {
   console.log(lista);
   // dates
 
-  //
-  const datesTxt = useSelector((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt))
-  );
-  console.log(datesTxt);
-  //icons
-  const icons = useSelector((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
-  );
-  console.log(icons);
-
+  // //
+  // const datesTxt = useSelector((state) =>
+  //   state.api.map((i) => i.city.list.map((ii) => ii.dt_txt))
+  // );
+  // console.log(datesTxt);
+  // //icons
+  // const icons = useSelector((state) =>
+  //   state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
+  // );
+  // console.log(icons);
+  // //
+  // const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
   //route
   const { ime, dan } = useParams();
   console.log(ime);
@@ -39,7 +40,6 @@ function Detail() {
           </ul>
         ))}
       </div>
-      {datesTxt}, {icons}
       <Outlet />
     </div>
   );
