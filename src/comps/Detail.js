@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet, useParams } from "react-router-dom";
 import Card from "./Card";
-// import Table from "./Table";
+import Table from "./Table";
 function Detail() {
   //  //drill
   const lista = useSelector((state) => state.api.map((i) => i.city.list));
@@ -56,7 +56,7 @@ function Detail() {
           );
         })}
       </div>
-
+      <Table dat={ime} />
       <Outlet />
     </div>
   );

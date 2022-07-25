@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-function Table() {
+function Table({ dat }) {
   //
 
   const params = useParams();
   console.log(params);
   const ime = params.ime;
-  const dan = params.dan;
-  console.log(dan);
+  // console.log(dan);
   //  //drill
   // // dates
   // const takeDate = useSelector((state) =>
@@ -32,10 +31,11 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {lista.map((i) => (
+          {lista[0].map((i) => (
             <tr>
-              <td>{i.dt_txt} </td>
+              <td>{i.dt_txt.slice(11, 14)} </td>
               {/* <td>{i.weather[0].icon}</td> */}
+              <td>{i.main.temp}</td>
             </tr>
           ))}
         </tbody>
