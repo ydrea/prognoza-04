@@ -1,14 +1,28 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet, useParams } from "react-router-dom";
+import Card from "./Card";
 // import Table from "./Table";
 function Detail() {
   //  //drill
   const lista = useSelector((state) => state.api.map((i) => i.city.list));
   console.log(lista);
-  // dates
-
+  // const take5 = useSelector
   // //
+  // const take5 = cities.slice(0, 5).map((i) => {
+  //   <Detail id={i.id} city={i.ime} fav={i.fav} />;
+  // });
+  // const takeFive = () => {
+  //   lista
+  //     .filter((i, index) => {
+  //       lista.indexOf(i) === index;
+  //     })
+  //     .map((ii) => {
+  //       <Card key={Date.now()} />;
+  //     });
+  // };
+  // //
+  // dates
   // const datesTxt = useSelector((state) =>
   //   state.api.map((i) => i.city.list.map((ii) => ii.dt_txt))
   // );
@@ -19,27 +33,30 @@ function Detail() {
   // );
   // console.log(icons);
   // //
-  // const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
   //route
-  const { ime, dan } = useParams();
+  const ime = useParams();
   console.log(ime);
-  console.log(dan);
+  // console.log(dan);
   //
   return (
     <div>
-      <h1>{ime}</h1>
-      <Link to={`/card/${ime}/${dan}`}>{ime}</Link>
-      <div>
-        5
-        {lista[0].map((i) => (
-          <ul>
-            <li key={i.dt + 134}>
-              | {i.dt_txt.slice(0, 10)} | {i.weather[0].icon} |{" "}
-              {i.main.temp_min}| {i.main.temp_max} |
-            </li>
-          </ul>
-        ))}
+      <div className="list-container">
+        {lista[0].map((i) => {
+          return (
+            <Card
+              className="cards"
+              key={i.id - 1}
+              id={i.id}
+              ime={i.dt_txt.slice(5, 10)}
+              fav={i.fav}
+              icon={i.weather[0].icon}
+              min={i.main.temp_min}
+              max={i.main.temp_max}
+            />
+          );
+        })}
       </div>
+
       <Outlet />
     </div>
   );
