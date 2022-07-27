@@ -10,10 +10,6 @@ function Table({ dat }) {
   // console.log(dan);
   //  //drill
   // // dates
-  // const takeDate = useSelector((state) =>
-  //   state.api.map((i) => i.city.list.map((ii) => ii.dt_txt))
-  // );
-  // console.log(takeDate);
   //icons
   const icons = useSelector((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))

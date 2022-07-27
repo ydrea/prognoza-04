@@ -23,7 +23,6 @@ function Card({ id, ime, fav, icon, min, max }) {
   const handleDeleteIt = () => {
     dispatch(deleteIt({ id: id }));
   };
-
   const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
   return (
     <div className="card">
