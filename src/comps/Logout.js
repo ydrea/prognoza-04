@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../redux/userSlice";
-import { getEmAsync, resetList } from "../redux/apiSlice";
+import { resetList } from "../redux/apiSlice";
 
 function Logout() {
   const user = useSelector((state) => state.user);

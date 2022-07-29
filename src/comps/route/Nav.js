@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//
 function Nav() {
   return (
-    <div>
+    <div className="nav">
       <Link to="/"> Home</Link>
+      <Link to="form">Form</Link>
       <Link to="weather">List</Link>
-      <Link to="weather/:don">Dan</Link>
-      <Link to="weather/:dan/:id">List id</Link>
+      <Link to="weather/:ime">Ime</Link>
+      <Link to="weather/:ime/:dat">Dat</Link>
     </div>
   );
 }

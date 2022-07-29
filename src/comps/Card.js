@@ -5,12 +5,6 @@ import { useNavigate, Outlet, Link, useParams } from "react-router-dom";
 function Card({ id, ime, fav, icon, min, max }) {
   const dispatch = useDispatch();
 
-  // const navigate = useNavigate();
-
-  // const params = useParams();
-  // console.log(params);
-  // const imeGrada = params.imeGrada;
-
   const handleFavCheck = () => {
     dispatch(
       toggleFav({

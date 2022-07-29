@@ -7,7 +7,7 @@ function Cards({ id, ime, fav, icon, min, max, dat }) {
   return (
     <div className="card">
       <span className="command">
-        <Link className="link" to={`/card/${dat}`}>
+        <Link className="link" to={`/card/${ime}/${dat}`}>
           {dat}
         </Link>
       </span>

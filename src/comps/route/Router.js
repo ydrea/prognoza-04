@@ -10,14 +10,12 @@ import {
 //
 import Nav from "./Nav";
 //
-import Home from "./Home";
 import Form from "./Form";
-import Conform from "./Conform";
 import List from "./List";
 import Fav from "./Fav";
 import Four0Four from "../Four0Four";
 import Detalji from "./Detalji";
-import Dan from "./Dan";
+import Table from "./Table";
 //
 function Router() {
   return (
@@ -25,13 +23,13 @@ function Router() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Four0Four />} />
-          <Route path="conform" element={<Conform />} />
-          <Route path="weather" element={<Form />}>
-            <Route path=":dan" element={<Dan />} />
-            <Route path=":dan/:id" element={<Detalji />} />
+          <Route path="/" element={<Form />} />
+          <Route path="fav" element={<Fav />} />
+          <Route path="weather" element={<List />}>
+            <Route path=":ime" element={<Detalji />} />
+            <Route path=":ime/:dat" element={<Table />} />
           </Route>
+          <Route path="*" element={<Four0Four />} />
         </Routes>
       </BrowserRouter>
     </div>

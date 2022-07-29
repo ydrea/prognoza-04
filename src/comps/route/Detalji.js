@@ -2,13 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function Detalji() {
-  const { days, id } = useParams();
+  const { ime, dat } = useParams();
   // const id = params.id;
   return (
     <div>
       Detail
       <div>
-        5 {days} of {id}
+        5 {ime} of {dat}
       </div>
     </div>
   );

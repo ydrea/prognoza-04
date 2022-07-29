@@ -29,8 +29,6 @@ export default function App() {
   const user = useSelector((state) => state.user);
   const api = useSelector((state) => state.api);
   //
-  // let { cityName } = useParams;
-  // console.log(cityName);
   //
   return (
     <div className="app">

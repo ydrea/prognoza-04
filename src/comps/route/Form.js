@@ -7,12 +7,12 @@ function Form() {
   return (
     <div>
       <input type="search" />
-      <button type="submit" onClick={() => navigate("/conform")}>
-        Conform
+      <button type="submit" onClick={() => navigate("/weather")}>
+        List
       </button>
-      <nav>
-        <Link to="list">list</Link>
-        <Link to="fav">fav</Link>
+      <nav className="nav">
+        <Link to="/weather">list</Link>
+        <Link to="/fav">fav</Link>
       </nav>
       <Outlet />
     </div>
