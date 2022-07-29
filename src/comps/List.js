@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getEmAsync, resetList } from "../redux/apiSlice";
 import "../styles/style.css";
+// import Modal from "./Modal";
 export default function List() {
+  // const [modalOpen, modalOpenSet] = useState(false);
   const cities = useSelector((state) => state.api);
   console.log(cities);
 
@@ -23,8 +25,8 @@ export default function List() {
 
   return (
     <div className="list-container">
-      {cities.length > 3 ? (
-        <alert>smanji </alert>
+      {cities.length > 2 ? (
+        <p>mao </p>
       ) : (
         cities.map((i) => {
           return (

@@ -12,8 +12,10 @@ export default function App() {
   console.log(stejt);
 
   return (
-    <div>
-      <Router />
+    <div className="app">
+      <div className="form">
+        <Router />
+      </div>
     </div>
   );
 }

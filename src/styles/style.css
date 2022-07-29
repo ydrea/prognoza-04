@@ -15,6 +15,24 @@
   text-decoration: none;
 }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: "translate(-50%, 50%)";
+  background-color: lightgoldenrodyellow;
+  z-index: 1000;
+}
+
+.overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(41, 50, 65, 0.06);
+  z-index: 1000;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

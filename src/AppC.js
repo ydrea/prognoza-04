@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 //routes
 import Card from "./comps/Card";
+import Cards from "./comps/Cards";
 import Login from "./comps/Login";
 import Logout from "./comps/Logout";
 import Detail from "./comps/Detail";
@@ -58,8 +59,8 @@ export default function App() {
               </Route>
               <Route path="card" element={<Card />} />
               <Route path="card/:ime" element={<Detail />} />
-              <Route path="card/:ime/:dan" element={<Table />} />
-
+              <Route path="cards" element={<Cards />} />
+              <Route path="cards/:dat" element={<Table />} />
               <Route path="*" element={<Four0Four />} />
             </Routes>
           ) : null}

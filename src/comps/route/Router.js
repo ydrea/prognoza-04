@@ -17,7 +17,7 @@ import List from "./List";
 import Fav from "./Fav";
 import Four0Four from "../Four0Four";
 import Detalji from "./Detalji";
-import Don from "./Don";
+import Dan from "./Dan";
 //
 function Router() {
   return (
@@ -30,10 +30,9 @@ function Router() {
           <Route path="conform" element={<Conform />} />
           <Route path="form" element={<Form />}>
             <Route path="list" element={<List />}>
-              <Route path="don" element={<Don />} />
-              <Route path=":id" element={<Detalji />} />
+              <Route path=":dan" element={<Dan />} />
+              <Route path=":dan/:id" element={<Detalji />} />
             </Route>
-            <Route path="fav" element={<Fav />} />
           </Route>
         </Routes>
       </BrowserRouter>

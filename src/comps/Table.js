@@ -1,13 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-function Table({ dat }) {
-  //
+function Table() {
+  //takeHour   //just Dates
+  const takeDate = useSelector((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(10, 15)))
+  );
+  console.log("datumi", takeDate);
 
-  const params = useParams();
-  console.log(params);
-  const ime = params.ime;
-  // console.log(dan);
+  const dat = useParams();
+  console.log("route", dat);
+  //
   //  //drill
   // // dates
   //icons
@@ -23,7 +26,7 @@ function Table({ dat }) {
       <table>
         <thead>
           <tr>
-            <th>table m</th>
+            <th>dat</th>
           </tr>
         </thead>
         <tbody>
