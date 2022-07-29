@@ -28,11 +28,9 @@ function Router() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Four0Four />} />
           <Route path="conform" element={<Conform />} />
-          <Route path="form" element={<Form />}>
-            <Route path="list" element={<List />}>
-              <Route path=":dan" element={<Dan />} />
-              <Route path=":dan/:id" element={<Detalji />} />
-            </Route>
+          <Route path="weather" element={<Form />}>
+            <Route path=":dan" element={<Dan />} />
+            <Route path=":dan/:id" element={<Detalji />} />
           </Route>
         </Routes>
       </BrowserRouter>
