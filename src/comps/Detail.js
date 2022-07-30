@@ -31,6 +31,7 @@ function Detail() {
                 <Cards
                   className="cards"
                   key={i.id}
+                  ime={ime}
                   id={i.id}
                   dat={i.dt_txt.slice(5, 10)}
                   fav={i.fav}
@@ -44,8 +45,8 @@ function Detail() {
           //
         }
       </div>
-      <Table />
       <Outlet />
+      <Table />
     </div>
   );
 }

@@ -19,7 +19,6 @@ import Four0Four from "./comps/Four0Four";
 //comps
 import Form from "./comps/Form";
 import List from "./comps/List";
-// import Flat from "./json/Flat";
 
 //redux
 import { useSelector } from "react-redux";
@@ -40,7 +39,7 @@ export default function App() {
             <div className="instruction">Unesi korisničke podatke</div>
           ) : (
             <div className="nav">
-              <Link className="link" to="list">
+              <Link className="link" to="weather">
                 Weather
               </Link>
               <Link className="link" to="favorites">
@@ -53,12 +52,12 @@ export default function App() {
               <Route path="/" element={<Form />}>
                 <Route index element={<List />} />
                 <Route path="favorites" element={<Favorites />} />
-                <Route path="list" element={<List />} />
+                <Route path="weather" element={<List />} />
               </Route>
               <Route path="card" element={<Card />} />
               <Route path="card/:ime" element={<Detail />} />
               <Route path="cards" element={<Cards />} />
-              <Route path="cards/:dat" element={<Table />} />
+              <Route path="cards/:ime/:dat" element={<Table />} />
               <Route path="*" element={<Four0Four />} />
             </Routes>
           ) : null}

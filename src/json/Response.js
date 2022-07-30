@@ -1,4 +1,15 @@
-const dataJson = {
+const reCursive = (srch, data) => {
+  for (var key in data)
+    if (typeof data[key] === "object") {
+      reCursive(srch, data[key]);
+    } else {
+      if (data[key] == srch) {
+        console.log(data[key]);
+      }
+    }
+};
+
+const podata = {
   cod: "200",
   message: 0,
   cnt: 40,
@@ -1135,3 +1146,64 @@ const dataJson = {
     sunset: 1657211035,
   },
 };
+
+function search(what, where) {
+  var results = [];
+  var parentStack = [];
+
+  var searchR = function (what, where) {
+    if (typeof where == "object") {
+      parentStack.push(where);
+      for (key in where) {
+        searchR(what, where[key]);
+      }
+      parentStack.pop();
+    } else {
+      // here comes your search
+      if (what === where) {
+        results.push({
+          parent: parentStack[parentStack.length - 1],
+          value: where,
+        });
+      }
+    }
+  };
+
+  searchR(what, where);
+
+  return results;
+}
+
+search("Clear", podata).forEach(function (value, key) {
+  var out = "parent: \n";
+
+  for (key in value.parent) {
+    out += "    key: " + key + " - value: " + value.parent[key] + "\n";
+  }
+
+  out += "\nvalue: " + value.value;
+
+  console.log(out);
+});
+//
+//
+// var searchVal = ["clear", "sky"];
+
+// var getTitle = function (podata, val) {
+//   for (var key in podata) {
+//     var titles = podata[key];
+//     for (var tit in titles) {
+//       var names = titles[tit];
+//       for (var name in names) {
+//         var string = names[name];
+//         if (string === val) return tit;
+//       }
+//     }
+//   }
+// };
+
+// searchVal.forEach(function (valToSearch) {
+//   console.log(getTitle(podata, valToSearch));
+// });
+
+// // getTitle(podata, "d");

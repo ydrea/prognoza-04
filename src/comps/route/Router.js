@@ -23,11 +23,13 @@ function Router() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<Form />} />
-          <Route path="fav" element={<Fav />} />
-          <Route path="weather" element={<List />}>
-            <Route path=":ime" element={<Detalji />} />
-            <Route path=":ime/:dat" element={<Table />} />
+          <Route path="/" element={<Form />}>
+            <Route index element={<List />} />
+            <Route path="fav" element={<Fav />} />
+            <Route path="weather" element={<List />}>
+              <Route path=":ime" element={<Detalji />} />
+              <Route path=":ime/:dat" element={<Table />} />
+            </Route>{" "}
           </Route>
           <Route path="*" element={<Four0Four />} />
         </Routes>
