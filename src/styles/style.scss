@@ -69,6 +69,12 @@
   row-gap: 5px;
 }
 
+.error {
+  display: block;
+  color: $error;
+  font-size: 2rem;
+  margin-top: 0.3rem;
+}
 .cards {
   display: flex;
 }

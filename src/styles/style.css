@@ -15,6 +15,24 @@
   text-decoration: none;
 }
 
+.toggle {
+  position: relative;
+  display: inline-block;
+}
+.toggle .toggle input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.toggle .slider {
+  display: flex;
+  width: 50px;
+  height: 25px;
+  border-radius: 100px;
+  background-color: #293241;
+  transition: background-color 0.2s;
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -90,6 +108,13 @@
   -moz-column-gap: 5px;
        column-gap: 5px;
   row-gap: 5px;
+}
+
+.error {
+  display: block;
+  color: #e63946;
+  font-size: 2rem;
+  margin-top: 0.3rem;
 }
 
 .cards {

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import Cards from "./Cards";
 import Table from "./Table";
 function Detail() {
@@ -24,7 +23,7 @@ function Detail() {
           //
           lista[0]
             .filter((i, index) => {
-              return index % 8 == 0;
+              return index % 8 === 0;
             })
             .map((i) => {
               return (

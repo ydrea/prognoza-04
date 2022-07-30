@@ -12,7 +12,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submit = () => {
-    // console.log(formValues);
     const token = [formValues.email, Date.now()];
     console.log(token);
     localStorage.setItem("userX", JSON.stringify(token));
