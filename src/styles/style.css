@@ -15,40 +15,49 @@
   text-decoration: none;
 }
 
-.toggle {
-  position: relative;
-  display: inline-block;
-}
-.toggle .toggle input {
-  width: 0;
+.react-switch-checkbox {
   height: 0;
-  opacity: 0;
+  width: 0;
+  visibility: hidden;
 }
-.toggle .slider {
+
+.react-switch-label {
+  margin-top: 1rem;
   display: flex;
-  width: 50px;
-  height: 25px;
-  border-radius: 100px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 60px;
+  height: 28px;
   background-color: #293241;
-  transition: background-color 0.2s;
+  border-radius: 80px;
+  position: relative;
+  transition: background-color 0.1s;
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: "translate(-50%, 50%)";
-  background-color: lightgoldenrodyellow;
-  z-index: 1000;
+.react-switch-label .react-switch-button {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 45px;
+  border-width: 0.2rem;
+  border-style: double;
+  border-color: #e63946;
+  transition: 0.2s;
+  background: lightgoldenrodyellow;
 }
 
-.overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(41, 50, 65, 0.06);
-  z-index: 1000;
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 30px;
 }
 
 * {

@@ -1,6 +1,19 @@
-$light: lightgoldenrodyellow;
-$dark: #293241;
+// $light: lightgoldenrodyellow;
+// $dark: #293241;
 $mid: #fcba;
 $alert: #ff8700;
 $error: #e63946;
 $text: #293241;
+
+$themes: (
+  light: (
+    $light: lightgoldenrodyellow,
+    $dark: #293241,
+  ),
+  darko: (
+    $dark: lightgoldenrodyellow,
+    $light: #293241,
+  ),
+);
+
+@include themify($themes);

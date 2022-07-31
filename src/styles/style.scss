@@ -1,8 +1,8 @@
 @import "./fonts";
 @import "./colors";
-// @import "./mixins";
+@import "./mixin";
 @import "./clickables";
-@import "./modal";
+@import "./toggle.scss";
 
 * {
   box-sizing: border-box;
