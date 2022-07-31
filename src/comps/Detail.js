@@ -45,7 +45,7 @@ function Detail() {
         }
       </div>
       <Outlet />
-      <Table />
+      {/* <Table /> */}
     </div>
   );
 }

@@ -6,7 +6,7 @@ function Table() {
   const takeHour = useSelector((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(10, 16)))
   );
-  console.log("datumi", takeHour);
+  console.log("sati", takeHour);
 
   // // params
   const { ime, dat } = useParams();
@@ -27,6 +27,9 @@ function Table() {
   //list
   const lista = useSelector((state) => state.api.map((i) => i.city.list));
   console.log(lista);
+  //
+  // const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
+  //
 
   // //drill
   // const selected = useSelector((state) =>
@@ -36,23 +39,20 @@ function Table() {
 
   return (
     <div>
-      Table
-      <table>
+      <table className="table">
         <thead>
-          <tr>
-            <th>dat</th>
-          </tr>
+          <td>sat</td>
+          <td>icon</td>
+          <td>očekivana temperatura</td>
         </thead>
         <tbody>
           {lista[0]
             .filter((ii) => ii.dt_txt.slice(5, 10) == dat)
-            // .filter((i, index) => {
-            //   return index == [0, 4];
-            // })
+            //
             .map((i) => (
               <tr>
-                <td>{i.dt_txt.slice(11, 14)} </td>
-                {/* <td>{i.weather[0].icon}</td> */}
+                <td>{i.dt_txt.slice(11, 16)} </td>
+                <td>{i.weather[0].icon}</td>
                 <td>{i.main.temp}</td>
               </tr>
             ))}

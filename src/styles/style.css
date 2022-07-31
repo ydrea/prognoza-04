@@ -1,3 +1,8 @@
+.dark {
+  background: #181803;
+  color: white;
+}
+
 .button, .link {
   color: lightgoldenrodyellow;
   font-size: 1.2rem;
@@ -27,10 +32,10 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  width: 60px;
-  height: 28px;
+  width: 2.1rem;
+  height: 1.1rem;
   background-color: #293241;
-  border-radius: 80px;
+  border-radius: 10px;
   position: relative;
   transition: background-color 0.1s;
 }
@@ -41,13 +46,13 @@
   top: 2px;
   bottom: 2px;
   left: 2px;
-  width: 22px;
-  height: 22px;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 45px;
   border-width: 0.2rem;
   border-style: double;
   border-color: #e63946;
-  transition: 0.2s;
+  transition: 0.1s;
   background: lightgoldenrodyellow;
 }
 
@@ -66,17 +71,19 @@
   padding: 0;
 }
 * body {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: lightgoldenrodyellow;
+  color: #293241;
 }
 * .app {
-  background-color: lightgoldenrodyellow;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1;
 }
 * .header {
   display: flex;
-  background-color: lightgoldenrodyellow;
 }
 * .instruction {
   margin-left: 1rem;
@@ -131,7 +138,6 @@
 }
 
 .card {
-  background-color: lightgoldenrodyellow;
   height: 30vh;
   width: 16vw;
   border: 1px #293241 solid;
@@ -145,7 +151,7 @@
   list-style-type: none;
 }
 .card .ulist .li {
-  color: #293241;
+  text-decoration: none;
 }
 .card .command {
   display: flex;
@@ -157,7 +163,6 @@
   margin-bottom: 0.1rem;
 }
 .card .h1 {
-  color: #293241;
   font-size: 1rem;
   cursor: pointer;
 }
@@ -170,7 +175,7 @@
 }
 .login-container h1 {
   font-size: 12px;
-  color: #293241;
+  color: lightgoldenrodyellow;
 }
 .login-container label,
 .login-container input {
@@ -200,12 +205,24 @@
 }
 .login-container .disabled-btn {
   cursor: not-allowed;
-  background-color: lightgoldenrodyellow;
 }
 
 .logout-container {
-  display: flex;
-  flex-direction: column;
   margin-top: 1rem;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+table,
+th,
+td {
+  margin-left: 5rem;
+  border: 1px solid;
+  width: 50%;
+}
+table td,
+th td,
+td td {
+  padding: 0.2rem;
 }/*# sourceMappingURL=style.css.map */

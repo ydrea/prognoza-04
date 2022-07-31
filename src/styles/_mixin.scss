@@ -1,11 +1,39 @@
-@mixin themify($themes) {
-  @each $name, $values in $themes {
-    .#{$name}-theme {
-      $theme-map: $values !global;
-      @content;
-    }
+// @mixin themify($themes) {
+//   @each $name, $values in $themes {
+//     .#{$name}-theme {
+//       $theme-map: $values !global;
+//       @content;
+//     }
+//   }
+// }
+// @function themed($key) {
+//   @return map-get($theme-map, $key);
+// }
+
+@mixin theme($dark: false) {
+  @if $dark {
+    background: darken($prim, 85%);
+    color: lighten($second, 80%);
   }
 }
-@function themed($key) {
-  @return map-get($theme-map, $key);
+
+.dark {
+  @include theme(true);
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin kontenjer {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }

@@ -10,26 +10,25 @@
   padding: 0;
 
   body {
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
+    background: $prim;
+    color: $second;
   }
 
   .app {
-    background-color: $light;
     font-family: $font-stack;
     line-height: 1;
   }
 
   .header {
     display: flex;
-    background-color: $light;
+    // background: $prim;
   }
   .instruction {
     margin-left: 1rem;
   }
   .nav {
-    display: flex;
-    flex-direction: row;
+    @include flexRow;
     padding: 1rem;
     justify-content: space-evenly;
     align-items: center;
@@ -80,20 +79,18 @@
 }
 
 .card {
-  background-color: $light;
+  // background: $prim;
   height: 30vh;
   width: 16vw;
-  border: 1px $dark solid;
+  border: 1px $second solid;
 
   .ulist {
     margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     list-style-type: none;
     .li {
-      color: $dark;
+      // color: $second;
+      text-decoration: none;
     }
   }
   .command {
@@ -101,12 +98,12 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-evenly;
-    border-bottom: 1px $dark solid;
+    border-bottom: 1px $second solid;
     padding: 0.2rem;
     margin-bottom: 0.1rem;
   }
   .h1 {
-    color: $dark;
+    // color: $second;
     font-size: 1rem;
     cursor: pointer;
   }
@@ -115,19 +112,16 @@
 //login
 
 .login-container {
-  margin-top: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  @include kontenjer;
 
   h1 {
     font-size: 12px;
-    color: $text;
+    color: $prim;
   }
 
   label,
   input {
-    color: $text;
+    color: $second;
   }
 
   label {
@@ -160,16 +154,24 @@
 
   .disabled-btn {
     cursor: not-allowed;
-    // display: none;
-    background-color: $light;
+    // background: $prim;
   }
 }
 
 //logout
 
 .logout-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  padding: 1rem;
+  @include kontenjer;
+}
+
+//table
+table,
+th,
+td {
+  margin-left: 5rem;
+  border: 1px solid;
+  width: 50%;
+  td {
+    padding: 0.2rem;
+  }
 }

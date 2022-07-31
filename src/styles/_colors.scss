@@ -1,19 +1,20 @@
-// $light: lightgoldenrodyellow;
-// $dark: #293241;
-$mid: #fcba;
+// $mid: #fcba;
 $alert: #ff8700;
 $error: #e63946;
-$text: #293241;
 
-$themes: (
-  light: (
-    $light: lightgoldenrodyellow,
-    $dark: #293241,
-  ),
-  darko: (
-    $dark: lightgoldenrodyellow,
-    $light: #293241,
-  ),
-);
+$prim: lightgoldenrodyellow;
+$second: #293241;
 
-@include themify($themes);
+// @mixin colorswitch {
+// }
+
+// $themes: (
+//   light: (
+//     $prim: lightgoldenrodyellow,
+//     $second: #293241,
+//   ),
+//   darko: (
+//     $second: lightgoldenrodyellow,
+//     $prim: #293241,
+//   ),
+// );

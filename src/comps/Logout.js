@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../redux/userSlice";
 import { resetList } from "../redux/apiSlice";
 import Switch from "./Switch";
+//
 function Logout() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
