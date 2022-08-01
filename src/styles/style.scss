@@ -4,6 +4,18 @@
 @import "./clickables";
 @import "./toggle.scss";
 
+html {
+  --primaryBackgroundColor: $prim;
+  --primaryTextColor: $second;
+}
+
+// @media (prefers-color-scheme: dark) {
+html.dark {
+  --primaryBackgroundColor: $second;
+  --primaryTextColor: $prim;
+}
+// }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +23,6 @@
 
   body {
     @include flexCenter;
-    background: $prim;
-    color: $second;
   }
 
   .app {

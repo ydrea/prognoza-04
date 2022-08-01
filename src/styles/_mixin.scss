@@ -10,16 +10,16 @@
 //   @return map-get($theme-map, $key);
 // }
 
-@mixin theme($dark: false) {
-  @if $dark {
-    background: darken($prim, 85%);
-    color: lighten($second, 80%);
-  }
-}
+// @mixin theme($dark: false) {
+//   @if $dark {
+//     background: darken($prim, 85%);
+//     color: lighten($second, 80%);
+//   }
+// }
 
-.dark {
-  @include theme(true);
-}
+// .dark {
+//   @include theme(false);
+// }
 
 @mixin flexRow {
   display: flex;

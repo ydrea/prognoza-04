@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../redux/userSlice";
 import { resetList } from "../redux/apiSlice";
-import Switch from "./Switch";
+import { DarkToggle } from "./Switch";
+//
+
 //
 function Logout() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [value, setValue] = useState(false);
-
+  const [isOn, isOnSet] = useState();
+  //
   const deleteIt = (e) => {
     e.preventDefault();
     dispatch(resetList());
@@ -21,8 +23,7 @@ function Logout() {
       </button>
       <span>{user.email} </span>
 
-      <Switch toggle={value} handleToggle={() => setValue(!value)} />
-      <p> switch to {value ? "light" : "dark"} mode</p>
+      <DarkToggle />
     </div>
   );
 }
