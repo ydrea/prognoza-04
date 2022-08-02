@@ -1,11 +1,22 @@
-@function borderColors($color) {
-  @if (darkness($color) >70) {
-    @return $prim;
-  } @else {
-    @return $second;
+// @function borderColors($color) {
+//   @if (darkness($color) >70) {
+//     @return $prim;
+//   } @else {
+//     @return $second;
+//   }
+// }
+
+@mixin whenDark {
+  html.dark & {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      @content;
+    }
   }
 }
-
 @mixin flexRow {
   display: flex;
   flex-direction: row;

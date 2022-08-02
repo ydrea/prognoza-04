@@ -23,6 +23,7 @@ import List from "./comps/List";
 //redux
 import { useSelector } from "react-redux";
 import Table from "./comps/Table";
+import { DarkToggle } from "./comps/Switch";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
@@ -31,7 +32,10 @@ export default function App() {
   //
   return (
     <div className="app">
-      <header className="header">{!user.email ? <Login /> : <Logout />}</header>
+      <header className="header">
+        {!user.email ? <Login /> : <Logout />}
+        <DarkToggle />
+      </header>
 
       <div className="form">
         <BrowserRouter>

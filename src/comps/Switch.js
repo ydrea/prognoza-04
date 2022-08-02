@@ -15,6 +15,7 @@ export const DarkToggle = () => {
     }
   );
   const [isDark, setIsDark] = useState(systemPrefersDark);
+  //
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add(DARK_CLASS);
@@ -23,7 +24,7 @@ export const DarkToggle = () => {
     }
   }, [isDark]);
   return (
-    <>
+    <div className="toggle-container">
       <Toggle
         className="react-switch-checkbox"
         checked={isDark}
@@ -39,6 +40,6 @@ export const DarkToggle = () => {
         <span className={`react-switch-button`} />
       </label>
       <p> switch to {isDark ? "light" : "dark"} mode</p>
-    </>
+    </div>
   );
 };

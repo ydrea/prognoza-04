@@ -5,16 +5,15 @@
 @import "./toggle.scss";
 
 html {
-  --primaryBackgroundColor: $prim;
-  --primaryTextColor: $second;
+  background: $prim;
+  color: $second;
 }
 
-// @media (prefers-color-scheme: dark) {
+// //
 html.dark {
-  --primaryBackgroundColor: $second;
-  --primaryTextColor: $prim;
+  background: $second;
+  color: $prim;
 }
-// }
 
 * {
   box-sizing: border-box;
@@ -28,10 +27,12 @@ html.dark {
   .app {
     font-family: $font-stack;
     line-height: 1;
+    display: block;
   }
 
   .header {
     display: flex;
+    // flex-direction: column;
     // background: $prim;
   }
   .instruction {
@@ -45,7 +46,10 @@ html.dark {
   }
   //
 }
-
+//toggle
+.toggle-container {
+  @include kontenjer;
+}
 // form
 .form-container {
   margin: 1rem;
@@ -161,7 +165,7 @@ html.dark {
   }
 
   .disabled-btn {
-    cursor: not-allowed;
+    cursor: pointer;
   }
 }
 
@@ -169,6 +173,7 @@ html.dark {
 
 .logout-container {
   @include kontenjer;
+  cursor: default;
 }
 
 //table

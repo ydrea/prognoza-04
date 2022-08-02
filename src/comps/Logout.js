@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../redux/userSlice";
 import { resetList } from "../redux/apiSlice";
-import { DarkToggle } from "./Switch";
+
 //
 
 //
@@ -22,8 +22,6 @@ function Logout() {
         Logout
       </button>
       <span>{user.email} </span>
-
-      <DarkToggle />
     </div>
   );
 }

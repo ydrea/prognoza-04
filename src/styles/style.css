@@ -49,6 +49,7 @@
   border-color: #e63946;
   transition: 0.1s;
   background: lightgoldenrodyellow;
+  cursor: pointer;
 }
 
 .react-switch-checkbox:checked + .react-switch-label .react-switch-button {
@@ -61,13 +62,13 @@
 }
 
 html {
-  --primaryBackgroundColor: $prim;
-  --primaryTextColor: $second;
+  background: lightgoldenrodyellow;
+  color: #293241;
 }
 
 html.dark {
-  --primaryBackgroundColor: $second;
-  --primaryTextColor: $prim;
+  background: #293241;
+  color: lightgoldenrodyellow;
 }
 
 * {
@@ -84,6 +85,7 @@ html.dark {
 * .app {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1;
+  display: block;
 }
 * .header {
   display: flex;
@@ -97,6 +99,13 @@ html.dark {
   padding: 1rem;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.toggle-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-container {
@@ -207,7 +216,7 @@ html.dark {
   margin-top: 0.3rem;
 }
 .login-container .disabled-btn {
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .logout-container {
@@ -215,6 +224,7 @@ html.dark {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  cursor: default;
 }
 
 table,

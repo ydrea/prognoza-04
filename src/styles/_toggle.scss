@@ -32,6 +32,7 @@
   border-color: $error;
   transition: 0.1s;
   background: $prim;
+  cursor: pointer;
 }
 
 .react-switch-checkbox:checked + .react-switch-label .react-switch-button {
