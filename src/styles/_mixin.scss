@@ -1,25 +1,10 @@
-// @mixin themify($themes) {
-//   @each $name, $values in $themes {
-//     .#{$name}-theme {
-//       $theme-map: $values !global;
-//       @content;
-//     }
-//   }
-// }
-// @function themed($key) {
-//   @return map-get($theme-map, $key);
-// }
-
-// @mixin theme($dark: false) {
-//   @if $dark {
-//     background: darken($prim, 85%);
-//     color: lighten($second, 80%);
-//   }
-// }
-
-// .dark {
-//   @include theme(false);
-// }
+@function borderColors($color) {
+  @if (darkness($color) >70) {
+    @return $prim;
+  } @else {
+    @return $second;
+  }
+}
 
 @mixin flexRow {
   display: flex;

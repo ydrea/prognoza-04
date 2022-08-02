@@ -9,7 +9,7 @@ import { DarkToggle } from "./Switch";
 function Logout() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [isOn, isOnSet] = useState();
+  // const [isOn, isOnSet] = useState();
   //
   const deleteIt = (e) => {
     e.preventDefault();

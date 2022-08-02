@@ -28,7 +28,7 @@ function Table() {
   const lista = useSelector((state) => state.api.map((i) => i.city.list));
   console.log(lista);
   //
-  // const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
+  const iconurl = "https://openweathermap.org/img/w/";
   //
 
   // //drill
@@ -50,9 +50,11 @@ function Table() {
             .filter((ii) => ii.dt_txt.slice(5, 10) == dat)
             //
             .map((i) => (
-              <tr>
+              <tr key={i.id}>
                 <td>{i.dt_txt.slice(11, 16)} </td>
-                <td>{i.weather[0].icon}</td>
+                <td>
+                  <img src={iconurl + `${i.weather[0].icon}` + ".png"} />
+                </td>
                 <td>{i.main.temp}</td>
               </tr>
             ))}
