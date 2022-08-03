@@ -10,8 +10,8 @@ const MockNav = () => {
   );
 };
 
-test("alo", () => {
-  render(<Nav />);
+test("alo", async () => {
+  render(<MockNav />);
   const hElement = screen.getByText(/nav/i);
   expect(hElement).toBeInTheDocument();
 });
