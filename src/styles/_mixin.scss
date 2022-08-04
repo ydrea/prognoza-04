@@ -1,8 +1,8 @@
-// @function borderColors($color) {
-//   @if (darkness($color) >70) {
-//     @return $prim;
+// @function color($color, $mod: null) {
+//   @if ($mod) {
+//     @return $alert;
 //   } @else {
-//     @return $second;
+//     @return $error;
 //   }
 // }
 

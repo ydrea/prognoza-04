@@ -133,16 +133,21 @@ html.dark {
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1rem, 35vh;
   -moz-column-gap: 5px;
        column-gap: 5px;
   row-gap: 5px;
 }
 
-.error {
-  display: block;
-  color: #e63946;
-  font-size: 2rem;
+.alert {
+  grid-column: 1/-1;
+  display: flex;
+  color: #ff8700;
+  font-size: 1.2rem;
   margin-top: 0.3rem;
+}
+.alert .error h4 {
+  color: #ff8700;
 }
 
 .cards {

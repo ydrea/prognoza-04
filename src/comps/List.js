@@ -22,7 +22,7 @@ export default function List() {
   //
   return (
     <div className="list-container">
-      <span className="error">{toomuch}</span>
+      <span className="alert">{toomuch}</span>
       {
         tenPieces
           //

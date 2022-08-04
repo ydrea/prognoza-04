@@ -1,15 +1,15 @@
 import React from "react";
 import { useSelectorApi } from "../redux/reduxHooks";
 import Card from "./Card";
+//
 export default function Favorites() {
   const faved = useSelectorApi((state) =>
     state.api.filter((i) => i.fav === true)
   );
-  console.log(faved);
-
+  //
   return (
-    <>
-      <h4>Broj omiljenih: {faved.length}</h4>
+    <div className="list-container">
+      <h4 className="alert">Broj omiljenih: {faved.length}</h4>
       {faved.map((i) => (
         <Card
           className="cards"
@@ -22,6 +22,6 @@ export default function Favorites() {
           max={i.city.list[0].main.temp_max}
         />
       ))}
-    </>
+    </div>
   );
 }
