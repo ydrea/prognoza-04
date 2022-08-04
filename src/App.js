@@ -1,13 +1,6 @@
 import "./styles/style.css";
 // import "./App.css";
-import {
-  Link,
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-  // useParams,
-} from "react-router-dom";
+import { Link, BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //routes
 import Card from "./comps/Card";
 import Cards from "./comps/Cards";

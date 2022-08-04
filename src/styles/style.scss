@@ -86,10 +86,8 @@ html.dark {
   grid-column: 1/-1;
   display: flex;
   color: $alert;
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-  .error h4 {
-    color: $alert;
+  .error {
+    @include error;
   }
 }
 
@@ -163,9 +161,7 @@ html.dark {
   }
 
   .error {
-    color: $error;
-    font-size: 1rem;
-    margin-top: 0.3rem;
+    @include error;
   }
 
   .disabled-btn {

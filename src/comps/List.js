@@ -12,9 +12,9 @@ export default function List() {
   console.log(tenPieces);
 
   useEffect(() => {
-    console.log("KAE!");
+    console.log("Effect");
     if (cities.length > tenPieces.length) {
-      toomuchSet("mnoogo kume!!!");
+      toomuchSet("mnoogo kume!");
     } else {
       toomuchSet("");
     }
@@ -22,7 +22,9 @@ export default function List() {
   //
   return (
     <div className="list-container">
-      <span className="alert">{toomuch}</span>
+      <div className="alert">
+        <h4 className="error">{toomuch}</h4>
+      </div>
       {
         tenPieces
           //

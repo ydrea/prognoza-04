@@ -1,11 +1,12 @@
 import React from "react";
-import { useSelectorApi } from "../redux/reduxHooks";
+import { selectFav, useSelectorApi } from "../redux/reduxHooks";
 import Card from "./Card";
 //
 export default function Favorites() {
-  const faved = useSelectorApi((state) =>
-    state.api.filter((i) => i.fav === true)
-  );
+  const faved = selectFav(state);
+  // useSelectorApi((state) =>
+  //   state.api.filter((i) => i.fav === true)
+  // );
   //
   return (
     <div className="list-container">
