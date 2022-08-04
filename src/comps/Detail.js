@@ -1,16 +1,12 @@
-import { selectlist, useSelectorApi } from "../redux/reduxHooks";
+import { selectDate, selectlist, useSelectorApi } from "../redux/reduxHooks";
 import { Outlet, useParams } from "react-router-dom";
 import Cards from "./Cards";
 function Detail() {
   //drill
   const lista = selectlist(state);
-  // useSelectorApi
-  // ((state) => state.api.map((i) => i.city.list));
   console.log("lista", lista);
   //just Dates
-  const takeDate = useSelectorApi((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(1, 10)))
-  );
+  const takeDate = selectDate(state);
   console.log("datumi", takeDate);
 
   //route

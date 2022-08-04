@@ -1,11 +1,15 @@
 import React from "react";
-import { useSelectorApi } from "../redux/reduxHooks";
+import {
+  selectDate,
+  selectHour,
+  selectIcon,
+  selectlist,
+  useSelectorApi,
+} from "../redux/reduxHooks";
 import { useParams } from "react-router-dom";
 function Table() {
   //takeHour
-  const takeHour = useSelectorApi((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(10, 16)))
-  );
+  const takeHour = selectHour(state);
   console.log("sati", takeHour);
 
   // // params
@@ -13,19 +17,15 @@ function Table() {
   console.log("route", ime, dat);
 
   // // dates
-  const takeDate = useSelectorApi((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(5, 10)))
-  );
+  const takeDate = selectDate(state);
   console.log("datumi", takeDate);
 
   //icons
-  const icons = useSelectorApi((state) =>
-    state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
-  );
+  const icons = selectIcon(state);
   console.log(icons);
 
   //list
-  const lista = useSelectorApi((state) => state.api.map((i) => i.city.list));
+  const lista = selectlist(state);
   console.log(lista);
   //
   const iconurl = "https://openweathermap.org/img/w/";

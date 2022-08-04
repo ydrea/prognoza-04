@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { useSelectorApi } from "../redux/reduxHooks";
+import { selectDate, useSelectorApi } from "../redux/reduxHooks";
 import "../styles/style.css";
 //
 export default function List() {
@@ -19,6 +19,7 @@ export default function List() {
       toomuchSet("");
     }
   }, [tenPieces, cities]);
+  //
   //
   return (
     <div className="list-container">
