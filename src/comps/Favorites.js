@@ -1,13 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelectorApi } from "../redux/reduxHooks";
 import Card from "./Card";
 export default function Favorites() {
-  const faved = useSelector((state) => state.api.filter((i) => i.fav === true));
+  const faved = useSelectorApi((state) =>
+    state.api.filter((i) => i.fav === true)
+  );
   console.log(faved);
 
   return (
     <>
-      {/* <div>Omiljeni</div> */}
       <h4>Broj omiljenih: {faved.length}</h4>
       {faved.map((i) => (
         <Card

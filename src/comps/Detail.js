@@ -1,13 +1,12 @@
-import { useSelector } from "react-redux";
+import { useSelectorApi } from "../redux/reduxHooks";
 import { Outlet, useParams } from "react-router-dom";
 import Cards from "./Cards";
-import Table from "./Table";
 function Detail() {
   //drill
-  const lista = useSelector((state) => state.api.map((i) => i.city.list));
+  const lista = useSelectorApi((state) => state.api.map((i) => i.city.list));
   console.log("lista", lista);
   //just Dates
-  const takeDate = useSelector((state) =>
+  const takeDate = useSelectorApi((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(1, 10)))
   );
   console.log("datumi", takeDate);

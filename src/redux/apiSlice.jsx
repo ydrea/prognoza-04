@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import { nanoid } from "nanoid";
-// import { Api } from "./apiCall";
+
 
 export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
   const resp = await fetch(
@@ -66,17 +65,6 @@ export const apiSlice = createSlice({
       console.log('yilch')
     }
   }
-//   extraReducers: (builder) => {
-//     builder.addCase(fetchByName.fulfilled, (state, action) => {
-//       // console.log(payload);
-//       return action.payload.data;
-//       // state.cities.push(action.payload);
-//     }),
-//    builder.addCase(fetchByName.rejected), (state, action) => {
-// state.status = 'failed';
-// state.error = action.error.message;
-//    }
-//   },
 });
 
 
@@ -84,3 +72,5 @@ export const apiSlice = createSlice({
 export const { addCity, toggleFav, deleteIt, resetList } = apiSlice.actions;
 
 export default apiSlice.reducer;
+
+

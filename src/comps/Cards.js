@@ -1,8 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { deleteIt, toggleFav } from "../redux/apiSlice";
-import { useNavigate, Outlet, Link, useParams } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 //
-function Cards({ dat, ime, id, icon, min, max }) {
+function Cards({ dat, ime, icon, min, max }) {
   const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
   //
   // const { ime, dat } = useParams();

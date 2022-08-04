@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatchApi } from "../redux/reduxHooks";
 import { deleteIt, toggleFav } from "../redux/apiSlice";
-import { useNavigate, Outlet, Link, useParams } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 //
 function Card({ id, ime, fav, icon, min, max }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatchApi();
 
   const handleFavCheck = () => {
     dispatch(

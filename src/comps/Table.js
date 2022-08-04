@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelectorApi } from "../redux/reduxHooks";
 import { useParams } from "react-router-dom";
 function Table() {
-  //takeHour   //just Dates
-  const takeHour = useSelector((state) =>
+  //takeHour
+  const takeHour = useSelectorApi((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(10, 16)))
   );
   console.log("sati", takeHour);
@@ -13,30 +13,23 @@ function Table() {
   console.log("route", ime, dat);
 
   // // dates
-  const takeDate = useSelector((state) =>
+  const takeDate = useSelectorApi((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(5, 10)))
   );
   console.log("datumi", takeDate);
 
   //icons
-  const icons = useSelector((state) =>
+  const icons = useSelectorApi((state) =>
     state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
   );
   console.log(icons);
 
   //list
-  const lista = useSelector((state) => state.api.map((i) => i.city.list));
+  const lista = useSelectorApi((state) => state.api.map((i) => i.city.list));
   console.log(lista);
   //
   const iconurl = "https://openweathermap.org/img/w/";
   //
-
-  // //drill
-  // const selected = useSelector((state) =>
-  //   lista.filter((i) => i.takeDate === dat)
-  // );
-  // console.log(selected);
-
   return (
     <div>
       <table className="table">

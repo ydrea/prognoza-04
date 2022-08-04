@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatchApi } from "../redux/reduxHooks";
 import { Outlet } from "react-router-dom";
-import { addCity, getEmAsync } from "../redux/apiSlice";
+import { getEmAsync } from "../redux/apiSlice";
 
 const Form = () => {
   const [value, setValue] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useDispatchApi();
 
   const onSubmit = (e) => {
     e.preventDefault();
