@@ -3,10 +3,14 @@ import { Outlet, useParams } from "react-router-dom";
 import Cards from "./Cards";
 function Detail() {
   //drill
-  const lista = selectlist(state);
+  const lista = useSelectorApi((state) => state.api.map((i) => i.city.list));
+  // selectlist();
   console.log("lista", lista);
   //just Dates
-  const takeDate = selectDate(state);
+  const takeDate = useSelectorApi((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(1, 10)))
+  );
+  // selectDate();
   console.log("datumi", takeDate);
 
   //route

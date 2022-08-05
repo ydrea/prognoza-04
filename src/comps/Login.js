@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatchApi } from "../redux/reduxHooks";
 import "../styles/style.css";
 // import { useSelector, useDispatch } from "react-redux";
 import { update } from "../redux/userSlice";
@@ -9,7 +9,7 @@ const Login = () => {
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatchApi();
 
   const submit = () => {
     const token = [formValues.email, Date.now()];
@@ -37,13 +37,13 @@ const Login = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!values.email) {
-      errors.email = "Unesite email";
+      errors.email = "Unesi email";
     } else if (!regex.test(values.email)) {
       errors.email = "Neispravan format email adrese";
     }
 
     if (!values.password) {
-      errors.password = "Unesite lozinku!";
+      errors.password = "Unesi lozinku!";
     } else if (values.password.length < 6) {
       errors.password = "Lozinka mora imati min. 6 znakova";
     }

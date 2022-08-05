@@ -9,7 +9,9 @@ import {
 import { useParams } from "react-router-dom";
 function Table() {
   //takeHour
-  const takeHour = selectHour(state);
+  const takeHour = (state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(10, 16)));
+  // selectHour();
   console.log("sati", takeHour);
 
   // // params
@@ -17,15 +19,24 @@ function Table() {
   console.log("route", ime, dat);
 
   // // dates
-  const takeDate = selectDate(state);
+  const takeDate = useSelectorApi((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.dt_txt.slice(1, 10)))
+  );
+  // selectDate();
   console.log("datumi", takeDate);
 
   //icons
-  const icons = selectIcon(state);
+  const icons = useSelectorApi((state) =>
+    state.api.map((i) => i.city.list.map((ii) => ii.weather[0].icon))
+  );
+
+  // selectIcon();
   console.log(icons);
 
   //list
-  const lista = selectlist(state);
+  const lista = useSelectorApi((state) => state.api.map((i) => i.city.list));
+
+  // selectlist();
   console.log(lista);
   //
   const iconurl = "https://openweathermap.org/img/w/";
