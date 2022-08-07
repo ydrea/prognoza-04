@@ -12,7 +12,7 @@ export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
     // console.log("FETCHED", data);
     return { city };
   } else {
-    return "anxios";
+    return "anxious";
   }
 });
 
@@ -48,21 +48,16 @@ export const apiSlice = createSlice({
   console.log('vozi...')
 },
     [getEmAsync.fulfilled]: (state, action)=>{
-    //  state.push(action.payload.city) 
     const noviGrad = {
       city: action.payload.city,
-      // id: Date.now(),
       id: action.payload.city.city.id,
       ime: action.payload.city.city.name,
       fav: false,
     };
     state.push(noviGrad);
-
-
-    //  return action.payload.city
     },
     [getEmAsync.rejected]: (state, action)=>{
-      console.log('yilch')
+      console.log('Zilch')
     }
   }
 });

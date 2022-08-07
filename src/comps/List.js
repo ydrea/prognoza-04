@@ -6,10 +6,10 @@ import "../styles/style.css";
 export default function List() {
   const [toomuch, toomuchSet] = useState("");
   const cities = useSelectorApi((state) => state.api);
-  console.log(cities);
+  console.log("cities", cities);
 
   const tenPieces = cities.slice(0, 4);
-  console.log(tenPieces);
+  console.log("10pieces", tenPieces);
 
   useEffect(() => {
     console.log("Effect");
@@ -29,10 +29,11 @@ export default function List() {
       {
         tenPieces
           //
-          .map((i) => {
+          .map((i, index) => {
             return (
               <Card
                 className="cards"
+                data-testId={`test-${index}`}
                 key={i.id + 1}
                 id={i.id}
                 ime={i.ime}

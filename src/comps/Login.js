@@ -62,11 +62,12 @@ const Login = () => {
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-msg">Form submitted successfully</span>
       )}
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit}>
         <div className="form-row">
           <label htmlFor="email">Email</label>
           <input
             type="email"
+            placeholder="E-mail"
             name="email"
             id="email"
             value={formValues.email}

@@ -9,10 +9,7 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // console.log(value);
     dispatch(getEmAsync({ city: value }));
-
-    // //
     setValue("");
   };
 
@@ -23,7 +20,7 @@ const Form = () => {
         <input
           className="inputCity"
           type="text"
-          placeholder="City..."
+          placeholder="city"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         ></input>

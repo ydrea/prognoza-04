@@ -47,6 +47,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "install": "^0.13.0",
+    "msw": "^0.44.2",
     "npm": "^8.16.0",
     "proxy-memoize": "^1.1.0",
     "react-testing-library": "^8.0.1",
