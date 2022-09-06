@@ -1,5 +1,5 @@
 import React from "react";
-import { selectFav, useSelectorApi } from "../redux/reduxHooks";
+import { useSelectorApi } from "../redux/reduxHooks";
 import Card from "./Card";
 //
 export default function Favorites() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { selectDate, useSelectorApi } from "../redux/reduxHooks";
+import { useSelectorApi } from "../redux/reduxHooks";
 import "../styles/style.css";
 //
 export default function List() {

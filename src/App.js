@@ -1,5 +1,4 @@
 import "./styles/style.css";
-// import "./App.css";
 import { Link, BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //routes
 import Card from "./comps/Card";
@@ -48,9 +47,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Form />}>
                 <Route index element={<List />} />
-                <Route path="favorites" element={<Favorites />} />
                 <Route path="weather" element={<List />} />
               </Route>
+              <Route path="favorites" element={<Favorites />} />
               <Route path="card" element={<Card />} />
               <Route path="card/:ime" element={<Detail />} />
               <Route path="cards" element={<Cards />} />

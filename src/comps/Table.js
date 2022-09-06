@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  selectDate,
-  selectHour,
-  selectIcon,
-  selectlist,
-  useSelectorApi,
-} from "../redux/reduxHooks";
+import { useSelectorApi } from "../redux/reduxHooks";
 import { useParams } from "react-router-dom";
 function Table() {
   //takeHour
@@ -51,7 +45,7 @@ function Table() {
         </thead>
         <tbody>
           {lista[0]
-            .filter((ii) => ii.dt_txt.slice(5, 10) == dat)
+            .filter((ii) => ii.dt_txt.slice(5, 10) === dat)
             //
             .map((i) => (
               <tr key={i.id}>

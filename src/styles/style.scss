@@ -31,9 +31,7 @@ html.dark {
   }
 
   .header {
-    display: flex;
-    // flex-direction: column;
-    // background: $prim;
+    display: block;
   }
   .instruction {
     margin-left: 1rem;

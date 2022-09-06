@@ -3,7 +3,6 @@ import { Outlet, Link } from "react-router-dom";
 function Cards({ dat, ime, icon, min, max }) {
   const iconurl = `https://openweathermap.org/img/w/${icon}.png`;
   //
-  // const { ime, dat } = useParams();
   console.log(ime.ime, dat);
   //
   return (

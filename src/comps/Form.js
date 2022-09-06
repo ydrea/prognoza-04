@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatchApi } from "../redux/reduxHooks";
 import { Outlet } from "react-router-dom";
 import { getEmAsync } from "../redux/apiSlice";
+import { Button } from "react-bootstrap";
 
 const Form = () => {
   const [value, setValue] = useState("");
@@ -25,9 +26,9 @@ const Form = () => {
           onChange={(e) => setValue(e.target.value)}
         ></input>
 
-        <button type="submit" className="button">
+        <Button type="submit" className="button">
           Dodaj
-        </button>
+        </Button>
       </form>
       <Outlet />
     </>

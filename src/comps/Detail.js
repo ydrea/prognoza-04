@@ -1,4 +1,4 @@
-import { selectDate, selectlist, useSelectorApi } from "../redux/reduxHooks";
+import { useSelectorApi } from "../redux/reduxHooks";
 import { Outlet, useParams } from "react-router-dom";
 import Cards from "./Cards";
 function Detail() {
