@@ -20,7 +20,6 @@ export default function List() {
     }
   }, [tenPieces, cities]);
   //
-  //
   return (
     <div className="list-container">
       <div className="alert">

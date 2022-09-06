@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatchApi } from "../redux/reduxHooks";
 import "../styles/style.css";
-// import { useSelector, useDispatch } from "react-redux";
 import { update } from "../redux/userSlice";
-// import { useLocalStorage } from "./LocalStorage";
+//
 const Login = () => {
   const intialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(intialValues);
