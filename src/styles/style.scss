@@ -62,7 +62,6 @@ html.dark {
     display: flex;
     padding: 1rem;
     font-size: 1.4rem;
-    // border-bottom: 2;
     width: 30%;
     height: 1rem;
     margin: 1rem;
@@ -141,7 +140,7 @@ html.dark {
   }
 
   input {
-    // border: 2px solid rgba($dark, 0.8);
+    border: 1px solid;
     padding: 0.5rem 1rem;
     padding-left: 1rem;
     font-size: 1rem;
@@ -173,7 +172,6 @@ html.dark {
   .button {
     size: 1rem;
   }
-
   cursor: default;
 }
 
