@@ -28,7 +28,7 @@ html.dark {
 
   .header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: inherit;
     max-width: inherit;
   }
@@ -60,8 +60,9 @@ html.dark {
   }
   .inputCity {
     display: flex;
-    padding: 0.3rem;
-    font-size: 1.2rem;
+    padding: 1rem;
+    font-size: 12px;
+    // border-bottom: 2;
     width: 30%;
     height: 1rem;
     margin: 1rem;
