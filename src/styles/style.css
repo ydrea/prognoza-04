@@ -2,7 +2,6 @@
   color: lightgoldenrodyellow;
   font-size: 1.2rem;
   background: #293241;
-  border: none;
   cursor: pointer;
   padding: 0.1rem 0.1rem;
   margin-top: 0.1rem;
@@ -113,7 +112,7 @@ html.dark {
 }
 .form-container .instruction {
   margin-right: 1rem;
-  font-size: 12px;
+  font-size: 1.4rem;
 }
 .form-container .inputCity {
   display: flex;
@@ -247,11 +246,14 @@ td td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #293241;
   position: fixed;
   bottom: 0;
+  font-size: 1.4rem;
   width: 100%;
   max-width: inherit;
+}
+.footer .link {
+  text-decoration: none !important;
 }
 
 .logo {

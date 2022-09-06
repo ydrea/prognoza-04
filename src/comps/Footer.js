@@ -6,7 +6,10 @@ export const Footer = () => {
   return (
     <div className="footer">
       made with
-      <a href="https://api.openweathermap.org/"> OpenWeatherMaps </a>
+      <a className="link" href="https://api.openweathermap.org/">
+        {" "}
+        OpenWeatherMaps{" "}
+      </a>
     </div>
   );
 };

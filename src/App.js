@@ -1,5 +1,5 @@
 import "./styles/style.scss";
-import logo from "./logo_white_cropped.png";
+import logo from "./OpenWeather-Logo.jpg";
 import { Link, BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //routes
 import Card from "./comps/Card";

@@ -57,7 +57,7 @@ html.dark {
 
   .instruction {
     margin-right: 1rem;
-    font-size: 12px;
+    font-size: 1.4rem;
   }
   .inputCity {
     display: flex;
@@ -194,12 +194,14 @@ td {
   @include kontenjer;
   justify-content: center;
   align-items: center;
-  color: $second;
   position: fixed;
   bottom: 0;
-
+  font-size: 1.4rem;
   width: 100%;
   max-width: inherit;
+  .link {
+    text-decoration: none !important;
+  }
 }
 .logo {
   @include flexRow;
