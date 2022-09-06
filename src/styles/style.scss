@@ -185,7 +185,6 @@ td {
   margin-left: 5rem;
   border: 1px solid;
   width: 50%;
-  margin-bottom: 1rem;
   td {
     padding: 0.2rem;
   }
@@ -193,8 +192,9 @@ td {
 
 .footer {
   @include kontenjer;
+  margin-top: 1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   position: fixed;
   bottom: 0;
   font-size: 1.4rem;

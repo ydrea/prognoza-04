@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatchApi } from "../redux/reduxHooks";
 import "../styles/style.css";
 import { update } from "../redux/userSlice";
+import { Button } from "react-bootstrap";
 //
 const Login = () => {
   const intialValues = { email: "", password: "" };
@@ -93,7 +94,7 @@ const Login = () => {
           )}
         </div>
 
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
       </form>
     </div>
   );
