@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import Table from "./comps/Table";
 import { DarkToggle } from "./comps/Switch";
 import Footer from "./comps/Footer";
+import { Button } from "react-bootstrap";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
