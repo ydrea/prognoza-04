@@ -1,5 +1,4 @@
 import "./styles/style.scss";
-import logo from "./OpenWeather-Logo.jpg";
 import { Link, BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //routes
 import Card from "./comps/Card";
@@ -28,7 +27,6 @@ export default function App() {
     <div className="app">
       <header className="header">
         {!user.email ? <Login /> : <Logout />}
-        {<img src={logo} alt="logo" className="logo" />}
         <DarkToggle />
       </header>
 
