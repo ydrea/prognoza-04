@@ -29,6 +29,9 @@ html.dark {
   .header {
     display: flex;
     justify-content: space-between;
+    // background-color: $alert;
+    width: inherit;
+    max-width: inherit;
   }
   .instruction {
     margin-left: 1rem;
@@ -53,14 +56,14 @@ html.dark {
   align-items: center;
 
   .instruction {
-    margin-right: 2rem;
-    font-size: 20px;
+    margin-right: 1rem;
+    font-size: 12px;
   }
   .inputCity {
-    display: inline-block;
+    display: flex;
     padding: 1rem;
-    font-size: 20px;
-    border-bottom: 2;
+    font-size: 12px;
+    // border-bottom: 2;
     width: 30%;
     height: 1rem;
     margin: 1rem;
@@ -148,7 +151,7 @@ html.dark {
   .form-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .input-error {
@@ -189,9 +192,18 @@ td {
 
 .footer {
   @include kontenjer;
+  justify-content: center;
+  align-items: center;
+  color: $second;
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  max-width: inherit;
 }
 .logo {
   @include flexRow;
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 75px;
+  margin-top: 1rem;
 }
