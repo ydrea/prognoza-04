@@ -20,18 +20,15 @@ html.dark {
   margin: 0;
   padding: 0;
 
-  body {
-    @include flexCenter;
-  }
-
   .app {
     font-family: $font-stack;
     line-height: 1;
-    display: block;
+    display: grid;
   }
 
   .header {
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
   .instruction {
     margin-left: 1rem;
@@ -171,6 +168,10 @@ html.dark {
 
 .logout-container {
   @include kontenjer;
+  .button {
+    size: 1rem;
+  }
+
   cursor: default;
 }
 
@@ -184,4 +185,13 @@ td {
   td {
     padding: 0.2rem;
   }
+}
+
+.footer {
+  @include kontenjer;
+}
+.logo {
+  @include flexRow;
+  width: 100px;
+  height: 50px;
 }

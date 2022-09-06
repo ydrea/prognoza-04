@@ -13,7 +13,7 @@ function Logout() {
   };
   return (
     <div className="logout-container">
-      <button disabled={user.pending} onClick={deleteIt}>
+      <button className="button" disabled={user.pending} onClick={deleteIt}>
         Logout
       </button>
       <span>{user.email} </span>

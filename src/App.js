@@ -1,4 +1,5 @@
-import "./styles/style.css";
+import "./styles/style.scss";
+import logo from "./logo_white_cropped.png";
 import { Link, BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //routes
 import Card from "./comps/Card";
@@ -16,6 +17,7 @@ import List from "./comps/List";
 import { useSelector } from "react-redux";
 import Table from "./comps/Table";
 import { DarkToggle } from "./comps/Switch";
+import Footer from "./comps/Footer";
 //
 export default function App() {
   const user = useSelector((state) => state.user);
@@ -26,6 +28,7 @@ export default function App() {
     <div className="app">
       <header className="header">
         {!user.email ? <Login /> : <Logout />}
+        {<img src={logo} alt="logo" className="logo" />}
         <DarkToggle />
       </header>
 
@@ -60,6 +63,7 @@ export default function App() {
           {api.length !== 0 ? <Outlet /> : null}
         </BrowserRouter>
       </div>
+      <Footer />
     </div>
   );
 }
