@@ -9,7 +9,6 @@ export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
       );
   if (resp.ok) {
     const city = await resp.json();
-    // console.log("FETCHED", data);
     return { city };
   } else {
     return "anxious";
@@ -25,7 +24,6 @@ export const apiSlice = createSlice({
     addCity: (state, action) => {
       const noviGrad = {
         city: action.payload.city,
-        // id: Date.now(),
         id: action.payload.city.id,
         fav: false,
       };
