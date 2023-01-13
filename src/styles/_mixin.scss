@@ -1,11 +1,3 @@
-// @function color($color, $mod: null) {
-//   @if ($mod) {
-//     @return $alert;
-//   } @else {
-//     @return $error;
-//   }
-// }
-
 @mixin whenDark {
   html.dark & {
     @content;
@@ -35,5 +27,4 @@
 }
 @mixin error {
   color: $error;
-  // padding: 0.2rem;
 }

@@ -12,8 +12,7 @@ export const getEmAsync = createAsyncThunk("callEm", async (payload) => {
     return { city };
   } else {
     return "anxious";
-  }
-});
+  }});
 
 export const apiSlice = createSlice({
   name: "api",

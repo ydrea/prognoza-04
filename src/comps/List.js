@@ -26,23 +26,21 @@ export default function List() {
         <h4 className="error">{toomuch}</h4>
       </div>
       {
-        tenPieces
-          //
-          .map((i, index) => {
-            return (
-              <Card
-                className="cards"
-                data-testId={`test-${index}`}
-                key={i.id + 1}
-                id={i.id}
-                ime={i.ime}
-                fav={i.fav}
-                icon={i.city.list[0].weather[0].icon}
-                min={i.city.list[0].main.temp_min}
-                max={i.city.list[0].main.temp_max}
-              />
-            );
-          })
+        tenPieces.map((i, index) => {
+          return (
+            <Card
+              className="cards"
+              data-testId={`test-${index}`}
+              key={i.id + 1}
+              id={i.id}
+              ime={i.ime}
+              fav={i.fav}
+              icon={i.city.list[0].weather[0].icon}
+              min={i.city.list[0].main.temp_min}
+              max={i.city.list[0].main.temp_max}
+            />
+          );
+        })
         // )
       }
     </div>
